@@ -7,9 +7,11 @@ class Theater extends React.Component {
           <a-scene>
             <a-assets>
               <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/videos/beebz.mp4" />
+              
             </a-assets>
             
             <a-video src="#nowplaying" width="16" height="9" position="0 0 -20"></a-video>
+            <a-entity audio-visualizer="src: url(http://localhost:8080/src/videos/morebeebz.mp3)" audio-visualizer-kick></a-entity>
           </a-scene>
       </div>
     )
