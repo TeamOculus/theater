@@ -3,6 +3,7 @@ import React from 'react';
 class Theater extends React.Component {
   render(){
     return (
+      <div className="show-vr-div">
           <a-scene>
             <a-assets>
               <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" />
@@ -12,6 +13,7 @@ class Theater extends React.Component {
                 repeat="indefinite"></a-animation>
             </a-box>
           </a-scene>
+      </div>
     )
   }
 }
