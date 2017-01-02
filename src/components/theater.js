@@ -6,12 +6,10 @@ class Theater extends React.Component {
       <div className="show-vr-div">
           <a-scene>
             <a-assets>
-              <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" />
+              <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/videos/beebz.mp4" />
             </a-assets>
-            <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
-              <a-animation attribute="position" to="0 2.2 -5" direction="alternate" dur="2000"
-                repeat="indefinite"></a-animation>
-            </a-box>
+            
+            <a-video src="#nowplaying" width="16" height="9" position="0 0 -20"></a-video>
           </a-scene>
       </div>
     )
