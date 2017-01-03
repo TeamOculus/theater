@@ -13,12 +13,26 @@ class Theater extends React.Component {
           <a-video src="#nowplaying" width="16" height="9" position="0 0 -20"></a-video>
         </a-scene>
 */}  
+
+{/*
         <audio id="audioElement" src="http://localhost:8080/src/videos/morebeebz.mp3"></audio>
         <button onClick={this.play}>Play the Audio</button>
         <button onClick={this.pause}>Pause the Audio</button>
         <button onClick={this.increaseVol}>Increase Volume</button>
         <button onClick={this.decreaseVol}>Decrease Volume</button>  
-        
+*/}
+
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="theater-model" src="http://localhost:8080/src/models/model.dae"></a-asset-item>
+        </a-assets>
+        <a-entity collada-model="#theater-model"></a-entity>
+
+        <a-entity position="10 0 -10">
+          <a-camera></a-camera>
+        </a-entity>
+      </a-scene>
+
       </div>
     )
   }
