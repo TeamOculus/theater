@@ -7,6 +7,7 @@ import Theater from './components/theater';
 import Space from './components/space';
 import Eightbit from './components/eightbit';
 import City from './components/city';
+import Underwater from './components/underwater';
 
 export default (
   <Route path='/' component={App}>
@@ -15,5 +16,6 @@ export default (
     <Route path='space' component={Space} />
     <Route path='eightbit' component={Eightbit} />
     <Route path='city' component={City} />
+    <Route path='underwater' component={Underwater} />
   </Route>
 )

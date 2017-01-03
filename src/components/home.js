@@ -9,6 +9,7 @@ class Home extends React.Component {
     this.goToSpace = this.goToSpace.bind(this);
     this.goToEightbit = this.goToEightbit.bind(this);
     this.goToCity = this.goToCity.bind(this);
+    this.goToUnderwater = this.goToUnderwater.bind(this);
   }
 
   render() {
@@ -20,6 +21,7 @@ class Home extends React.Component {
             <img id="spacelink" src="http://localhost:8080/src/assets/models/space/spacelink.jpg" />
             <img id="eightbitlink" src="http://localhost:8080/src/assets/models/eightbit/eightbitlink.jpg" />
             <img id="citylink" src="http://localhost:8080/src/assets/models/city/citylink.jpg" />
+            <img id="underwaterlink" src="http://localhost:8080/src/assets/models/underwater/underwaterlink.jpg" />
             
           </a-assets>
 
@@ -27,6 +29,8 @@ class Home extends React.Component {
           <a-plane id="spacelink2" src="#spacelink" height="5" width="10" position="15 0 -20"></a-plane>
           <a-plane id="eightbitlink2" src="#eightbitlink" height="5" width="10" position="-15 15 -20"></a-plane>
           <a-plane id="citylink2" src="#citylink" height="5" width="10" position="15 15 -20"></a-plane>
+          <a-plane id="underwaterlink2" src="#underwaterlink" height="5" width="10" position="0 10 -20"></a-plane>
+
 
           <a-entity position="0 1.8 4">
             <a-entity camera="" look-controls="" mouse-cursor="">
@@ -51,6 +55,7 @@ class Home extends React.Component {
     let goToSpacePointer = this.goToSpace;
     let goToEightbitPointer = this.goToEightbit;
     let goToCityPointer = this.goToCity;
+    let goToUnderwaterPointer = this.goToUnderwater;
     document.querySelector('#theaterlink2').addEventListener('click', function () {
       console.log('I was clicked!');
       goToTheaterPointer();
@@ -67,6 +72,10 @@ class Home extends React.Component {
       console.log('I was clicked!');
       goToCityPointer();
     });
+    document.querySelector('#underwaterlink2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      goToUnderwaterPointer();
+    });
   }
 
   goToTheater() {
@@ -80,6 +89,9 @@ class Home extends React.Component {
   }
   goToCity() {
     this.context.router.push("city")
+  }
+  goToUnderwater() {
+    this.context.router.push("underwater")
   }
 }
 
