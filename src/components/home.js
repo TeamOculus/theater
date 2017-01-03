@@ -7,6 +7,8 @@ class Home extends React.Component {
     this.state = {};
     this.goToTheater = this.goToTheater.bind(this);
     this.goToSpace = this.goToSpace.bind(this);
+    this.goToEightbit = this.goToEightbit.bind(this);
+    this.goToCity = this.goToCity.bind(this);
   }
 
   render() {
@@ -15,12 +17,16 @@ class Home extends React.Component {
         <a-scene>
           <a-assets>
             <img id="theaterlink" src="http://localhost:8080/src/assets/models/theater/theaterlink.jpg" />
-            <img id="spacelink" src="http://localhost:8080/src/assets/models/theater/spacelink.jpg" />
+            <img id="spacelink" src="http://localhost:8080/src/assets/models/space/spacelink.jpg" />
+            <img id="eightbitlink" src="http://localhost:8080/src/assets/models/eightbit/eightbitlink.jpg" />
+            <img id="citylink" src="http://localhost:8080/src/assets/models/city/citylink.jpg" />
+            
           </a-assets>
 
           <a-plane id="theaterlink2" src="#theaterlink" height="5" width="10" position="-15 0 -20"></a-plane>
           <a-plane id="spacelink2" src="#spacelink" height="5" width="10" position="15 0 -20"></a-plane>
-
+          <a-plane id="eightbitlink2" src="#eightbitlink" height="5" width="10" position="-15 15 -20"></a-plane>
+          <a-plane id="citylink2" src="#citylink" height="5" width="10" position="15 15 -20"></a-plane>
 
           <a-entity position="0 1.8 4">
             <a-entity camera="" look-controls="" mouse-cursor="">
@@ -43,6 +49,8 @@ class Home extends React.Component {
   componentDidMount() {
     let goToTheaterPointer = this.goToTheater;
     let goToSpacePointer = this.goToSpace;
+    let goToEightbitPointer = this.goToEightbit;
+    let goToCityPointer = this.goToCity;
     document.querySelector('#theaterlink2').addEventListener('click', function () {
       console.log('I was clicked!');
       goToTheaterPointer();
@@ -51,6 +59,14 @@ class Home extends React.Component {
       console.log('I was clicked!');
       goToSpacePointer();
     });
+    document.querySelector('#eightbitlink2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      goToEightbitPointer();
+    });
+    document.querySelector('#citylink2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      goToCityPointer();
+    });
   }
 
   goToTheater() {
@@ -58,6 +74,12 @@ class Home extends React.Component {
   }
   goToSpace() {
     this.context.router.push("space")
+  }
+  goToEightbit() {
+    this.context.router.push("eightbit")
+  }
+  goToCity() {
+    this.context.router.push("city")
   }
 }
 
