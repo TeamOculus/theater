@@ -22,21 +22,27 @@ class Home extends React.Component {
             <img id="eightbitlink" src="http://localhost:8080/src/assets/models/eightbit/eightbitlink.jpg" />
             <img id="citylink" src="http://localhost:8080/src/assets/models/city/citylink.jpg" />
             <img id="underwaterlink" src="http://localhost:8080/src/assets/models/underwater/underwaterlink.jpg" />
-            
+            <video id="vidbg" autoplay loop="true" webkit-playsinline src="http://localhost:8080/src/assets/videos/discoveryitaly.mp4" />
           </a-assets>
 
-          <a-plane id="theaterlink2" src="#theaterlink" height="5" width="10" position="-15 0 -20"></a-plane>
-          <a-plane id="spacelink2" src="#spacelink" height="5" width="10" position="15 0 -20"></a-plane>
-          <a-plane id="eightbitlink2" src="#eightbitlink" height="5" width="10" position="-15 15 -20"></a-plane>
-          <a-plane id="citylink2" src="#citylink" height="5" width="10" position="15 15 -20"></a-plane>
-          <a-plane id="underwaterlink2" src="#underwaterlink" height="5" width="10" position="0 10 -20"></a-plane>
+          <a-curvedimage id="theaterlink2" src="#theaterlink" height="4.0" radius="12" theta-length="45"
+                 rotation="0 70 0" scale="0.8 0.8 0.8"></a-curvedimage>
+          <a-curvedimage id="spacelink2" src="#spacelink" height="4.0" radius="12" theta-length="45"
+                 rotation="0 142 0" scale="0.8 0.8 0.8" ></a-curvedimage>
+          <a-curvedimage id="eightbitlink2" src="#eightbitlink" height="4.0" radius="12" theta-length="45"
+                 rotation="0 214 0" scale="0.8 0.8 0.8" ></a-curvedimage>
+          <a-curvedimage id="citylink2" src="#citylink" height="4.0" radius="12" theta-length="45"
+                 rotation="0 286 0" scale="0.8 0.8 0.8" ></a-curvedimage>
+          <a-curvedimage id="underwaterlink2" src="#underwaterlink" height="4.0" radius="12" theta-length="45"
+                 rotation="0 358 0" scale="0.8 0.8 0.8" ></a-curvedimage>
 
+          <a-videosphere src="#vidbg"></a-videosphere>
 
-          <a-entity position="0 1.8 4">
-            <a-entity camera="" look-controls="" mouse-cursor="">
-              <a-entity id="cursor" position="0 0 -1" geometry="primitive: ring; radiusOuter: 0.016; radiusInner: 0.01" material="color: #FFF;" cursor="fuse: true; maxDistance: 8">
-                <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="1500"></a-animation>
-              </a-entity>
+          <a-entity position="0 0 0">
+            <a-entity camera="active:true" look-controls="" mouse-cursor="" rotation="15.584452027558399 0.4583662361046582 0" position="0 0 0">
+              <a-cursor fuse="true" fuse-timeout="3000" color="yellow" material="shader:flat;opacity:0.8;color:yellow" cursor="maxDistance:1000;fuse:true" geometry="primitive:ring;radiusOuter:0.016;radiusInner:0.01;segmentsTheta:64" position="0 0 -1" raycaster="">
+                <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
+              </a-cursor>
             </a-entity>
           </a-entity>
 
