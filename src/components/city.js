@@ -10,11 +10,13 @@ class City extends React.Component {
             <img id="sky" src="http://localhost:8080/src/assets/imgs/city/city-bg.jpg" />
             <a-asset-item id="tower" src="http://localhost:8080/src/assets/models/city/al+hamra+2/model.dae" />
             <a-asset-item id="waldo" src="http://localhost:8080/src/assets/models/city/waldo.dae" />
+            <img id="ground" src="http://localhost:8080/src/assets/imgs/city/grass.jpg" />
           </a-assets>
 
           <a-sky src="#sky"></a-sky>
           <a-entity collada-model="#tower" position="0 0 0"></a-entity>
           <a-entity collada-model="#waldo" position="10 0 0"></a-entity>
+          <a-plane src="#ground" height="100" width="100" rotation="-90 0 0"></a-plane>
 
           {/*<a-camera position="0 0 0">
             <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
