@@ -38,13 +38,11 @@ class Home extends React.Component {
 
           <a-videosphere src="#vidbg"></a-videosphere>
 
-          <a-entity position="0 0 0">
-            <a-entity camera="active:true" look-controls="" mouse-cursor="" rotation="15.584452027558399 0.4583662361046582 0" position="0 0 0">
-              <a-cursor fuse="true" fuse-timeout="3000" color="yellow" material="shader:flat;opacity:0.8;color:yellow" cursor="maxDistance:1000;fuse:true" geometry="primitive:ring;radiusOuter:0.016;radiusInner:0.01;segmentsTheta:64" position="0 0 -1" raycaster="">
-                <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
-              </a-cursor>
-            </a-entity>
-          </a-entity>
+          <a-camera position="0 0 0">
+          <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
+            <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
+          </a-cursor>
+        </a-camera>
 
 
         </a-scene>
