@@ -126,13 +126,16 @@ class Space extends React.Component {
           </a-ring>
           <a-entity bmfont-text="text: Saturn; color: red" position="113 5 0" scale="5 5 5"></a-entity>
           
-          <a-sphere src="#neptune" radius="2" translate="0 1 0" position="135 0 0">
-            <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
-          </a-sphere>
 
-          <a-sphere src="#uranus" radius="2" translate="0 1 0" position="155 0 0">
+          <a-sphere src="#uranus" radius="2" translate="0 1 0" position="135 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
+          <a-entity bmfont-text="text: Uranus; color: red" position="133.5 4 0" scale="5 5 5"></a-entity>
+
+          <a-sphere src="#neptune" radius="2" translate="0 1 0" position="155 0 0">
+            <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+          </a-sphere>
+          <a-entity bmfont-text="text: Neptune; color: red" position="153.5 4 0" scale="5 5 5"></a-entity>
 
           <a-sphere src="#pluto" radius="0.5" translate="0 1 0" position="185 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
