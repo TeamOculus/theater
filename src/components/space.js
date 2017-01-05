@@ -18,6 +18,7 @@ class Space extends React.Component {
             <img id="jupiter" src="http://localhost:8080/src/assets/models/space/jupiter/jupiter2.jpg"/>
             <img id="saturn" src="http://localhost:8080/src/assets/models/space/saturn/model/material6.jpg"/>
             <img id="saturnrings" src="http://localhost:8080/src/assets/models/space/saturn/model/saturn-rings.png"/>
+            <img id="neptune" src="http://localhost:8080/src/assets/models/space/neptune/material1.jpg"/>
             <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
             {/*<a-asset-item id="milkyway" src="http://localhost:8080/src/assets/models/space/milkyway/model.dae"></a-asset-item>
             <a-asset-item id="earth" src="http://localhost:8080/src/assets/models/space/earth/earth.dae"></a-asset-item>
@@ -68,12 +69,15 @@ class Space extends React.Component {
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
 
-          <a-sphere src="#saturn" radius="4" translate="0 1 0" position="95 0 0">
+          <a-sphere src="#saturn" radius="3.5" translate="0 1 0" position="95 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
-          <a-ring src="#saturnrings" position="93 0 0" radius-inner="6" radius-outer="8" rotation="75 -50 0">
+          <a-ring src="#saturnrings" position="94.5 0 0" radius-inner="6" radius-outer="8" rotation="75 -50 0">
           </a-ring>
           
+          <a-sphere src="#neptune" radius="3" translate="0 1 0" position="115 0 0">
+            <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+          </a-sphere>
           
           {/*<a-entity collada-model="#saturn" position="90 0 -50" rotation="0 0 5" scale="1 1 0.7">
             <a-animation attribute="rotation"
