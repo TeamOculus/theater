@@ -19,6 +19,7 @@ class Space extends React.Component {
             <img id="saturn" src="http://localhost:8080/src/assets/models/space/saturn/model/material6.jpg"/>
             <img id="saturnrings" src="http://localhost:8080/src/assets/models/space/saturn/model/saturn-rings.png"/>
             <img id="neptune" src="http://localhost:8080/src/assets/models/space/neptune/material1.jpg"/>
+            <img id="uranus" src="http://localhost:8080/src/assets/models/space/uranus/model/material1.jpg"/>
             <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
             {/*<a-asset-item id="milkyway" src="http://localhost:8080/src/assets/models/space/milkyway/model.dae"></a-asset-item>
             <a-asset-item id="earth" src="http://localhost:8080/src/assets/models/space/earth/earth.dae"></a-asset-item>
@@ -76,6 +77,10 @@ class Space extends React.Component {
           </a-ring>
           
           <a-sphere src="#neptune" radius="3" translate="0 1 0" position="115 0 0">
+            <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+          </a-sphere>
+
+          <a-sphere src="#uranus" radius="3" translate="0 1 0" position="135 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
           
