@@ -41,11 +41,11 @@ class City extends React.Component {
 
           <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
 
-          {/*<a-camera position="0 0 0">
-            <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
+          <a-camera position="0 0 0" wasd-controls="fly: true">
+            {/*<a-cursor color="yellow" fuse="true" fuse-timeout="3000">
               <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
-            </a-cursor>
-          </a-camera>*/}
+            </a-cursor>*/}
+          </a-camera>
         </a-scene>
 
         
