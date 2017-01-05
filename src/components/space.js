@@ -115,7 +115,7 @@ class Space extends React.Component {
           <a-sphere src="#jupiter" radius="7" translate="0 1 0" position="85 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
-          <a-entity bmfont-text="text: Jupiter; color: red" position="85 12 0" scale="5 5 5"></a-entity>
+          <a-entity bmfont-text="text: Jupiter; color: red" position="82 9 0" scale="5 5 5"></a-entity>
 
           <a-sphere src="#saturn" radius="2.5" translate="0 1 0" position="115 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
@@ -124,6 +124,7 @@ class Space extends React.Component {
           </a-ring>
           <a-ring src="#saturnrings" position="114.5 0 0" radius-inner="6" radius-outer="8" rotation="-105 -50 10">
           </a-ring>
+          <a-entity bmfont-text="text: Saturn; color: red" position="113 5 0" scale="5 5 5"></a-entity>
           
           <a-sphere src="#neptune" radius="2" translate="0 1 0" position="135 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
