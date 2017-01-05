@@ -33,7 +33,7 @@ class City extends React.Component {
           <a-entity collada-model="#crowd2" position="13.82 -1 9.66"></a-entity>
           <a-entity collada-model="#crowd3" position="-7.49 -1 9.63"></a-entity>
           <a-entity collada-model="#crowd4" position="14.77 -1 -1.45"></a-entity>
-          <a-entity collada-model="#waldo" position="-5 0 -3"></a-entity>
+          <a-entity id="waldo-model" collada-model="#waldo" position="-5 0 -3"></a-entity>
           
           {/*<<a-entity collada-model="#future-city" position="-228 0 195"></a-entity>*/}
 
@@ -59,14 +59,14 @@ class City extends React.Component {
   componentDidMount() {
     let goToHomePointer = this.goToHome;
 
-    document.querySelector('#waldo').addEventListener('click', function () {
+    document.querySelector('#waldo-model').addEventListener('click', function () {
       console.log('I was clicked!');
       goToHomePointer();
     });
   }
 
   goToHome() {
-    this.context.router.push("home")
+    this.context.router.push("/")
   }
 
   
