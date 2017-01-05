@@ -1,7 +1,37 @@
 import React from 'react';
 
 class Space extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      xwingdir: true,
+      directionflag: 0
+    };
+    this.reversedir1 = this.reversedir1.bind(this)
+    this.reversedir2 = this.reversedir2.bind(this)
+  }
+
+  componentDidMount(){
+    this.reversedir1();
+  }
+
+  reversedir1() {
+    let reversedir2Pointer = this.reversedir2;
+    setTimeout(function() {
+      document.getElementById("xwing-anim").setAttribute("rotation", "0 90 0");
+      reversedir2Pointer();
+    }, 20000);
+  }
+  reversedir2() {
+    let reversedir1Pointer = this.reversedir1;
+    setTimeout(function() {
+      document.getElementById("xwing-anim").setAttribute("rotation", "0 270 0");
+      reversedir1Pointer();
+    }, 20000);
+  }
+
   render(){
+
     return (
       <div className="show-vr-div">
 
@@ -106,15 +136,16 @@ class Space extends React.Component {
           
           <a-entity collada-model="#stargate" position="20 20 0"></a-entity>
           
-          {/*<a-entity collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: false">
+          <a-entity id="xwing-anim" collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: false">
             <a-animation attribute="position" dur="20000" from="-150 -70 20" to="200 -70 20" direction="alternate" repeat="indefinite">
             </a-animation>
           </a-entity>
-
+          {/*
           <a-entity collada-model="#milleniumfalcon" position="0 20 20" rotation="0 270 0">
             <a-animation attribute="position" dur="20000" from="200 20 -20" to="-150 -20 -20" direction="alternate" repeat="indefinite">
             </a-animation>
-          </a-entity>*/}
+          </a-entity>
+          */}
           
           <a-entity position="30 -1.5 40">
             <a-camera id="camera" look-controls wasd-controls="acceleration: 300; fly: true"></a-camera>
