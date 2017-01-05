@@ -30,10 +30,10 @@ class Theater extends React.Component {
             ></a-mixin>
           
             <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
-            <video id="porter" autoplay loop="true" src="http://localhost:8080/src/assets/videos/porter.mp4" />
-            <video id="okgo" autoplay loop="true" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
-            <video id="kendrick" autoplay loop="true" src="http://localhost:8080/src/assets/videos/kendrick.mp4" />
-            <video id="lianne" autoplay loop="true" src="http://localhost:8080/src/assets/videos/lianne.mp4" />
+            <video id="porter" src="http://localhost:8080/src/assets/videos/porter.mp4" />
+            <video id="okgo" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
+            <video id="kendrick" src="http://localhost:8080/src/assets/videos/kendrick.mp4" />
+            <video id="lianne" src="http://localhost:8080/src/assets/videos/lianne.mp4" />
 
             <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
             <img id="sadmachine" src="http://localhost:8080/src/assets/imgs/sadmachine.jpg" />
@@ -60,7 +60,7 @@ class Theater extends React.Component {
           ></a-entity>
 
           <a-collada-model src="#theater-model" position="0 0 0"></a-collada-model>
-          <a-video src={this.state.currentplaying} width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
+          <a-video id="currentvid" src={this.state.currentplaying} width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
 
           <a-plane id="exitdoor" color="white" height="4.06" width="2.28" position="0.10 2.14 -2.88" rotation="0 90 0"></a-plane>
           <a-image src="#exit" height="0.98" width="1.78" position="0.10 4.76 -2.88" rotation="0 90 0"></a-image>
@@ -121,24 +121,65 @@ class Theater extends React.Component {
   }
 
   playPorter() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
     this.setState({
       currentplaying: "#porter"
     })
+
+    vid1.play();
+    vid2.pause();
+    vid3.pause();
+    vid4.pause();
+
   }
   playOkgo() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
     this.setState({
       currentplaying: "#okgo"
     })
+
+    vid1.pause();
+    vid2.play();
+    vid3.pause();
+    vid4.pause();   
   }
   playKendrick() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
     this.setState({
       currentplaying: "#kendrick"
     })
+
+    vid1.pause();
+    vid2.pause();
+    vid3.play();
+    vid4.pause();
   }
   playLianne() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
     this.setState({
       currentplaying: "#lianne"
     })
+
+    vid1.pause();
+    vid2.pause();
+    vid3.pause();
+    vid4.play();
   }
 
 }
