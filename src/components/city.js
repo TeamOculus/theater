@@ -30,16 +30,16 @@ class City extends React.Component {
           </a-assets>
 
           <a-sky src="#sky" rotation="0 0 0"></a-sky>
-          <a-entity collada-model="#waldo" position="10 0 0"></a-entity>
+          <a-entity collada-model="#waldo" position="-5 0 -3"></a-entity>
 
-          {/*<a-entity collada-model="#crowd1" position="0 -1 0"></a-entity>
-          <a-entity collada-model="#crowd2" position="20 -1 0"></a-entity>
-          <a-entity collada-model="#crowd3" position="-20 -1 0"></a-entity>
-          <a-entity collada-model="#crowd4" position="0 -1 20"></a-entity>
+          <a-entity collada-model="#crowd1" position="-7 -1 -1.5"></a-entity>
+          <a-entity collada-model="#crowd2" position="13.82 -1 9.66"></a-entity>
+          <a-entity collada-model="#crowd3" position="-7.49 -1 9.63"></a-entity>
+          <a-entity collada-model="#crowd4" position="14.77 -1 -1.45"></a-entity>
           
-          <a-entity collada-model="#future-city" position="-228 0 195"></a-entity>*/}
+          {/*<<a-entity collada-model="#future-city" position="-228 0 195"></a-entity>*/}
 
-          <a-entity collada-model="#park2" position="0 0 0"></a-entity>
+          <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
 
           {/*<a-camera position="0 0 0">
             <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
