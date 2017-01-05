@@ -64,10 +64,10 @@ class Theater extends React.Component {
 
           <a-plane id="exitdoor" color="white" height="4.06" width="2.28" position="0.10 2.14 -2.88" rotation="0 90 0"></a-plane>
           <a-image src="#exit" height="0.98" width="1.78" position="0.10 4.76 -2.88" rotation="0 90 0"></a-image>
-          <a-image src="#sadmachine" height="3" width="3" position="4 2 -2.88" rotation="0 0 0"></a-image>
-          <a-image src="#iwont" height="3" width="3" position="8 2 -2.88" rotation="0 0 0"></a-image>
-          <a-image src="#i" height="3" width="3" position="12 2 -2.88" rotation="0 0 0"></a-image>
-          <a-image src="#whatyou" height="3" width="3" position="16 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="sadmachine2" src="#sadmachine" height="3" width="3" position="4 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="iwont2" src="#iwont" height="3" width="3" position="8 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="i2" src="#i" height="3" width="3" position="12 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="whatyou2" src="#whatyou" height="3" width="3" position="16 2 -2.88" rotation="0 0 0"></a-image>
 
           <a-entity position="9.75 5 8.5">
             <a-camera>
@@ -90,9 +90,29 @@ class Theater extends React.Component {
 
   componentDidMount() {
     let goHomePointer = this.goHome;
+    let playPorterPointer = this.playPorter;
+    let playOkgoPointer = this.playOkgo;
+    let playKendrickPointer = this.playKendrick;
+    let playLiannePointer = this.playLianne;
     document.querySelector('#exitdoor').addEventListener('click', function () {
       console.log('I was clicked!');
       goHomePointer();
+    });
+    document.querySelector('#sadmachine2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playPorterPointer();
+    });
+    document.querySelector('#iwont2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playOkgoPointer();
+    });
+    document.querySelector('#i2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playKendrickPointer();
+    });
+    document.querySelector('#whatyou2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playLiannePointer();
     });
   }
 
@@ -101,16 +121,24 @@ class Theater extends React.Component {
   }
 
   playPorter() {
-
+    this.setState({
+      currentplaying: "#porter"
+    })
   }
   playOkgo() {
-
+    this.setState({
+      currentplaying: "#okgo"
+    })
   }
   playKendrick() {
-
+    this.setState({
+      currentplaying: "#kendrick"
+    })
   }
   playLianne() {
-    
+    this.setState({
+      currentplaying: "#lianne"
+    })
   }
 
 }
