@@ -13,12 +13,17 @@ class Eightbit extends React.Component {
             <a-asset-item id="fire" src="http://localhost:8080/src/assets/models/eightbit/fire/model.dae"></a-asset-item>
             <a-asset-item id="blue" src="http://localhost:8080/src/assets/models/eightbit/blueshell/shellmodel.dae"></a-asset-item>
             <a-asset-item id="bomb" src="http://localhost:8080/src/assets/models/eightbit/bomb/model.dae"></a-asset-item>
+            <a-asset-item id="kart" src="http://localhost:8080/src/assets/models/eightbit/kart/model.dae"></a-asset-item>
           </a-assets> 
+
+          <a-assets>
+            <audio src="http://localhost:8080/src/assets/sounds/mariokart.mp3" autoPlay preload></audio> 
+          </a-assets>
 
            <a-entity collada-model="#peach" position="0 0 0"></a-entity>
            <a-sky color="lightblue"></a-sky>
 
-           <a-entity position="20 0 -14">
+           <a-entity position="19 0 -22" rotation="0 180 0">
               <a-camera></a-camera>
            </a-entity>
 
@@ -26,9 +31,12 @@ class Eightbit extends React.Component {
 
            <a-entity collada-model="#fire" position="29.5 1.3 -25" scale=".04 .04 .04" rotation="0 270 0"></a-entity>
 
-           <a-entity collada-model="#blue" position="18.5 1 -22" scale=" .06 .06 .06"></a-entity>
+           <a-entity collada-model="#blue" position="18.20 1 -29.5" scale=" .06 .06 .06"></a-entity>
 
            <a-entity collada-model="#bomb" position="20 1.10 -40" scale=".10 .10 .10" rotation="0 130 0"></a-entity>
+           <a-entity collada-model="#kart" position="19 1.1 -22" scale=".15 .15 .15" rotation="0 180 0">
+              
+           </a-entity>
 
         </a-scene>
 
