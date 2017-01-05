@@ -38,7 +38,7 @@ class Home extends React.Component {
 
           <a-videosphere src="#vidbg"></a-videosphere>
 
-          <a-entity bmfont-text="text: HELLO!; color: #333" position="0 0 -5" scale="10 10 10"></a-entity>
+          <a-entity bmfont-text="text: HELLO!; color: #333" position="0 0 -5"></a-entity>
 
           <a-camera position="0 0 0">
           <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
