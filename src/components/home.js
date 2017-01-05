@@ -38,7 +38,10 @@ class Home extends React.Component {
 
           <a-videosphere src="#vidbg"></a-videosphere>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
           <a-entity position="-32.84 11.82 -36.12" scale="30 30 30" rotation="0 -13.02 0" bmfont-text="text: Welcome to Team Oculus' VR Demo!; color: #A1DAF2"></a-entity>
 
           <a-entity position="9.22 2.32 -3.63" scale="8 8 8" rotation="0 -90 0" bmfont-text="text: Theater; color: #E1AA40"></a-entity>
