@@ -22,6 +22,9 @@ class Space extends React.Component {
             <img id="uranus" src="http://localhost:8080/src/assets/models/space/uranus/model/material1.jpg"/>
             <img id="pluto" src="http://localhost:8080/src/assets/models/space/pluto/material_2.png"/>
             <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
+            <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/space/stargate/model.dae"></a-asset-item>
+            <a-asset-item id="xwing" src="http://localhost:8080/src/assets/models/space/xwing/model.dae"></a-asset-item>
+            <a-asset-item id="milleniumfalcon" src="http://localhost:8080/src/assets/models/space/milleniumfalcon/model.dae"></a-asset-item>
             {/*<a-asset-item id="milkyway" src="http://localhost:8080/src/assets/models/space/milkyway/model.dae"></a-asset-item>
             <a-asset-item id="earth" src="http://localhost:8080/src/assets/models/space/earth/earth.dae"></a-asset-item>
             <a-asset-item id="saturn" src="http://localhost:8080/src/assets/models/space/saturn/model.dae"></a-asset-item>
@@ -29,7 +32,7 @@ class Space extends React.Component {
             <a-asset-item id="sun" src="http://localhost:8080/src/assets/models/space/sun/model.dae"></a-asset-item>
 
             <a-asset-item id="enterprise1" src="http://localhost:8080/src/assets/models/space/enterprise1/model.dae"></a-asset-item>
-            <a-asset-item id="xwing" src="http://localhost:8080/src/assets/models/space/xwing/model.dae"></a-asset-item>*/}
+            */}
           </a-assets>
 
           <a-sky src="#spaceTexture"></a-sky>
@@ -89,6 +92,22 @@ class Space extends React.Component {
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
           
+          <a-entity collada-model="#stargate" position="20 20 0"></a-entity>
+          <a-entity collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: true">
+            <a-animation attribute="position" dur="20000" from="-150 -70 20" to="200 -70 20" direction="alternate" repeat="indefinite">
+            </a-animation>
+          </a-entity>
+
+          <a-entity collada-model="#milleniumfalcon" position="0 20 20" rotation="0 270 0">
+            <a-animation attribute="position" dur="20000" from="200 20 -20" to="-150 -20 -20" direction="alternate" repeat="indefinite">
+            </a-animation>
+          </a-entity>
+          
+          <a-entity position="30 -1.5 40">
+            <a-camera id="camera"></a-camera>
+          </a-entity>
+        </a-scene>
+        
           {/*<a-entity collada-model="#saturn" position="90 0 -50" rotation="0 0 5" scale="1 1 0.7">
             <a-animation attribute="rotation"
                dur="50000"
@@ -103,15 +122,9 @@ class Space extends React.Component {
                to="0 360 0"
                repeat="indefinite"></a-animation>
           </a-entity>*/}
-          <a-entity position="30 -1.5 40">
-            <a-camera id="camera"></a-camera>
-          </a-entity>
-        </a-scene>
 
-          {/*<a-entity collada-model="#xwing" position="0 -70 -5" rotation="0 180 0" scale="1 1 0.9">
-            <a-animation attribute="position" from="0 -70 -5" to="0 -80 -5"></a-animation>
-          </a-entity>
-          <a-entity collada-model="#enterprise1" position="-10 -90 -100" rotation="0 180 0" scale="1 1 0.8"></a-entity>*/}
+
+          {/*<a-entity collada-model="#enterprise1" position="-10 -90 -100" rotation="0 180 0" scale="1 1 0.8"></a-entity>*/}
          
       </div>
     )
