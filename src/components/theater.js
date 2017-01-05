@@ -36,12 +36,14 @@ class Theater extends React.Component {
             position="19 9.5 8"
           ></a-entity>
 
-          <a-entity collada-model="#theater-model" position="0 0 0"></a-entity>
+          <a-collada-model src="#theater-model" position="0 0 0"></a-collada-model>
           <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
 
           <a-entity position="9.75 5 8.5">
             <a-camera>
-              
+              <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
+                <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
+              </a-cursor>
             </a-camera>
           </a-entity>   
           
