@@ -4,8 +4,15 @@ import {Link} from 'react-router';
 class Theater extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      currentplaying: "#porter"
+    };
     this.goHome = this.goHome.bind(this);
+    this.playPorter = this.playPorter.bind(this);
+    this.playOkgo = this.playOkgo.bind(this);
+    this.playKendrick = this.playKendrick.bind(this);
+    this.playLianne = this.playLianne.bind(this);
+
   }
 
   render(){
@@ -23,13 +30,20 @@ class Theater extends React.Component {
             ></a-mixin>
           
             <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
-            <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/sadmachine.mp4" />
-            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
+            <video id="porter" autoplay loop="true" src="http://localhost:8080/src/assets/videos/porter.mp4" />
+            <video id="okgo" autoplay loop="true" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
+            <video id="kendrick" autoplay loop="true" src="http://localhost:8080/src/assets/videos/kendrick.mp4" />
+            <video id="lianne" autoplay loop="true" src="http://localhost:8080/src/assets/videos/lianne.mp4" />
 
+            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
+            <img id="sadmachine" src="http://localhost:8080/src/assets/imgs/sadmachine.jpg" />
+            <img id="iwont" src="http://localhost:8080/src/assets/imgs/iwont.jpg" />
+            <img id="i" src="http://localhost:8080/src/assets/imgs/i.jpg" />
+            <img id="whatyou" src="http://localhost:8080/src/assets/imgs/whatyou.jpg" />
           </a-assets>
 
           <a-entity
-            audioanalyser="src: #nowplaying; smoothingTimeConstant: 0.9"
+            audioanalyser={"src: " + this.state.currentplaying + "; smoothingTimeConstant: 0.9"}
             audioanalyser-levels-scale="max: 50; multiplier: 0.03"
             entity-generator="mixin: bar; num: 11"
             layout=""
@@ -37,7 +51,7 @@ class Theater extends React.Component {
             position="1 9.5 8"
           ></a-entity>
           <a-entity
-            audioanalyser="src: #nowplaying; smoothingTimeConstant: 0.9"
+            audioanalyser={"src: " + this.state.currentplaying + "; smoothingTimeConstant: 0.9"}
             audioanalyser-levels-scale="max: 50; multiplier: 0.03"
             entity-generator="mixin: bar; num: 11"
             layout=""
@@ -46,11 +60,14 @@ class Theater extends React.Component {
           ></a-entity>
 
           <a-collada-model src="#theater-model" position="0 0 0"></a-collada-model>
-          <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
+          <a-video src={this.state.currentplaying} width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
 
           <a-plane id="exitdoor" color="white" height="4.06" width="2.28" position="0.10 2.14 -2.88" rotation="0 90 0"></a-plane>
           <a-image src="#exit" height="0.98" width="1.78" position="0.10 4.76 -2.88" rotation="0 90 0"></a-image>
-
+          <a-image src="#sadmachine" height="3" width="3" position="4 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image src="#iwont" height="3" width="3" position="8 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image src="#i" height="3" width="3" position="12 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image src="#whatyou" height="3" width="3" position="16 2 -2.88" rotation="0 0 0"></a-image>
 
           <a-entity position="9.75 5 8.5">
             <a-camera>
@@ -63,13 +80,6 @@ class Theater extends React.Component {
            
         </a-scene>
 
-{/*
-        <audio id="audioElement" src="http://localhost:8080/src/assets/sounds/sadmachine.mp3"></audio>
-        <button onClick={this.play}>Play the Audio</button>
-        <button onClick={this.pause}>Pause the Audio</button>
-        <button onClick={this.increaseVol}>Increase Volume</button>
-        <button onClick={this.decreaseVol}>Decrease Volume</button>  
-*/} 
       </div>
     )
   }
@@ -90,19 +100,19 @@ class Theater extends React.Component {
     this.context.router.push("/")
   }
 
-  play() {
-    // make play audio trigger play video
-    document.getElementById('audioElement').play();
+  playPorter() {
+
   }
-  pause() {
-    document.getElementById('audioElement').pause();
+  playOkgo() {
+
   }
-  increaseVol() {
-    document.getElementById('audioElement').volume+=0.1;
+  playKendrick() {
+
   }
-  decreaseVol() {
-    document.getElementById('audioElement').volume-=0.1;
+  playLianne() {
+    
   }
+
 }
 
 export default Theater;
