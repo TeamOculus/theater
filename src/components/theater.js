@@ -5,17 +5,9 @@ class Theater extends React.Component {
     return (
       <div className="show-vr-div">
 
-{/*
-        <a-scene>
-          <a-assets>
-            <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/beebz.mp4" />
-          </a-assets>     
-          <a-video src="#nowplaying" width="16" height="9" position="0 0 -20"></a-video>
-        </a-scene>
-*/}  
 
 {/*
-        <audio id="audioElement" src="http://localhost:8080/src/assets/videos/morebeebz.mp3"></audio>
+        <audio id="audioElement" src="http://localhost:8080/src/assets/sounds/okgo.mp3"></audio>
         <button onClick={this.play}>Play the Audio</button>
         <button onClick={this.pause}>Pause the Audio</button>
         <button onClick={this.increaseVol}>Increase Volume</button>
@@ -24,20 +16,45 @@ class Theater extends React.Component {
 
       <a-scene>
         <a-assets>
-          <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model3.dae"></a-asset-item>
+          <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
+          <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
 
+          <a-mixin id="bar"
+          geometry="primitive: box"
+          material="color: black"
+          scale-y-color="from: 10 60 10; to: 180 255 180; maxScale: 15"
+        ></a-mixin>
+          <audio id="song" autoplay loop src="http://localhost:8080/src/assets/sounds/okgo.mp3"></audio>
         </a-assets>
 
+        <a-entity
+        audioanalyser="src: #song; smoothingTimeConstant: 0.9"
+        audioanalyser-levels-scale="max: 50; multiplier: 0.06"
+        entity-generator="mixin: bar; num: 256"
+        layout="type: circle; radius: 10"
+        rotation="0 180 0"
+        ></a-entity>
 
+        <a-light type="ambient" color="#222"></a-light>
+        <a-light type="point" position="0 1 0" intensity="2"></a-light>
+        <a-circle color="#333" opacity="0.8" rotation="-90 0 0" radius="12"
+          roughness="1"></a-circle>
+        <a-sky color="#222"></a-sky>
+
+{/* 
         <a-entity collada-model="#theater-model" position="0 0 0"></a-entity>
+        <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
+        <a-entity
+          audio-analyser="#song"
+        ></a-entity>
 
 
-        {/* <a-camera position="9.75 6.5 8.5"> */}
-        <a-camera position="0 0 0">
-          <a-cursor color="#4CC3D9" fuse="true" fuse-timeout="3000">
-            <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
-          </a-cursor>
+       <a-entity position="9.75 5 8.5">
+        <a-camera>
+          
         </a-camera>
+      </a-entity>
+  */}     
 
 
       </a-scene>
