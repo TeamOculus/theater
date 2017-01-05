@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
 class Theater extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.goHome = this.goHome.bind(this);
+  }
+
   render(){
     return (
       <div className="show-vr-div">
@@ -17,6 +24,8 @@ class Theater extends React.Component {
           
             <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
             <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/sadmachine.mp4" />
+            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
+
           </a-assets>
 
           <a-entity
@@ -36,12 +45,18 @@ class Theater extends React.Component {
             position="19 9.5 8"
           ></a-entity>
 
-          <a-entity collada-model="#theater-model" position="0 0 0"></a-entity>
+          <a-collada-model src="#theater-model" position="0 0 0"></a-collada-model>
           <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
+
+          <a-plane id="exitdoor" color="white" height="4.06" width="2.28" position="0.10 2.14 -2.88" rotation="0 90 0"></a-plane>
+          <a-image src="#exit" height="0.98" width="1.78" position="0.10 4.76 -2.88" rotation="0 90 0"></a-image>
+
 
           <a-entity position="9.75 5 8.5">
             <a-camera>
-              
+              <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
+                <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
+              </a-cursor>
             </a-camera>
           </a-entity>   
           
@@ -54,29 +69,25 @@ class Theater extends React.Component {
         <button onClick={this.pause}>Pause the Audio</button>
         <button onClick={this.increaseVol}>Increase Volume</button>
         <button onClick={this.decreaseVol}>Decrease Volume</button>  
-
-
-      <a-scene>
-        <a-assets>
-          <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
-          <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/sadmachine.mp4" />
-
-          <audio id="song" autoplay loop src="http://localhost:8080/src/assets/sounds/sadmachine.mp3"></audio>
-        </a-assets>
-
-        <a-entity collada-model="#theater-model" position="0 0 0"></a-entity>
-        <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
-
-        <a-entity position="9.75 5 8.5">
-          <a-camera>
-            
-          </a-camera>
-        </a-entity>    
-
-      </a-scene>
 */} 
       </div>
     )
+  }
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
+  componentDidMount() {
+    let goHomePointer = this.goHome;
+    document.querySelector('#exitdoor').addEventListener('click', function () {
+      console.log('I was clicked!');
+      goHomePointer();
+    });
+  }
+
+  goHome() {
+    this.context.router.push("/")
   }
 
   play() {
