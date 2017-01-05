@@ -14,6 +14,9 @@ class Eightbit extends React.Component {
             <a-asset-item id="blue" src="http://localhost:8080/src/assets/models/eightbit/blueshell/shellmodel.dae"></a-asset-item>
             <a-asset-item id="bomb" src="http://localhost:8080/src/assets/models/eightbit/bomb/model.dae"></a-asset-item>
             <a-asset-item id="kart" src="http://localhost:8080/src/assets/models/eightbit/kart/model.dae"></a-asset-item>
+            <a-asset-item id="princess" src="http://localhost:8080/src/assets/models/eightbit/princesspeach/model.dae"></a-asset-item>
+            <a-asset-item id="yoshi" src="http://localhost:8080/src/assets/models/eightbit/yoshi/model.dae"></a-asset-item>
+            <a-asset-item id="luigi" src="http://localhost:8080/src/assets/models/eightbit/luigi/model.dae"></a-asset-item>
           </a-assets> 
 
           <a-assets>
@@ -28,7 +31,9 @@ class Eightbit extends React.Component {
            </a-entity>
 
            <a-entity collada-model="#star" position="26 .95 -20" scale=".5 .5 .5"></a-entity>
-
+           <a-entity collada-model="#princess" position="17.25 1 -21" scale=".18 .18 .18" rotation="0 90 0"></a-entity>
+           <a-entity collada-model="#yoshi" position="17.25 .4 -22" scale=".9 .9 .9"rotation="0 90 0"></a-entity>
+           <a-entity collada-model="#luigi" position="17.5 1 -23" scale=".20 .20 .20" rotation="0 90 0"></a-entity>
            <a-entity collada-model="#fire" position="29.5 1.3 -25" scale=".04 .04 .04" rotation="0 270 0"></a-entity>
 
            <a-entity collada-model="#blue" position="18.20 1 -29.5" scale=" .03 .03 .03">
