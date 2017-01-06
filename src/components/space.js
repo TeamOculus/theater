@@ -11,6 +11,8 @@ class Space extends React.Component {
     this.goHome = this.goHome.bind(this)
     this.reversedir1 = this.reversedir1.bind(this)
     this.reversedir2 = this.reversedir2.bind(this)
+    this.dragonturn1 = this.dragonturn1.bind(this)
+    this.dragonturn2 = this.dragonturn2.bind(this)
   }
 
   static contextTypes = {
@@ -18,6 +20,8 @@ class Space extends React.Component {
   }
   componentDidMount(){
     this.reversedir1();
+    this.dragonturn1();
+
     let goHomePointer = this.goHome;
     document.querySelector('#exit').addEventListener('click', function () {
       console.log('I was clicked!');
@@ -44,6 +48,23 @@ class Space extends React.Component {
     }, 20000);
   }
 
+  dragonturn1() {
+    let dragonturn2Pointer = this.dragonturn2;
+    setTimeout(function() {
+      document.getElementById("spacexdragon-turn").setAttribute("rotation", "0 180 0");
+      dragonturn2Pointer();
+    }, 20000);
+  }
+  dragonturn2() {
+    let dragonturn1Pointer = this.dragonturn1;
+    setTimeout(function() {
+      document.getElementById("spacexdragon-turn").setAttribute("rotation", "0 360 0");
+      dragonturn1Pointer();
+    }, 20000);
+  }
+
+
+
   render(){
 
     return (
@@ -64,7 +85,7 @@ class Space extends React.Component {
             <img id="saturnrings" src="http://localhost:8080/src/assets/models/space/saturn/model/saturn-rings.png"/>
             <img id="neptune" src="http://localhost:8080/src/assets/models/space/neptune/material1.jpg"/>
             <img id="uranus" src="http://localhost:8080/src/assets/models/space/uranus/model/material1.jpg"/>
-            <img id="pluto" src="http://localhost:8080/src/assets/models/space/pluto/material_2.png"/>
+            <img id="pluto" src="http://localhost:8080/src/assets/models/space/pluto/material2.jpg"/>
             <img id="arrow" src="http://localhost:8080/src/assets/models/space/down-arrow-black.png"/>
             <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
             <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/space/stargate/model.dae"></a-asset-item>
@@ -91,7 +112,7 @@ class Space extends React.Component {
           <a-sphere src="#sun" radius="14" translate="0 1 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
-          <a-entity bmfont-text="text: Sun; color: red" position="-1.95 15.68 0" scale="10 10 10"></a-entity>
+          <a-entity bmfont-text="text: Sun; color: red" position="-4 16.5 0" scale="10 10 10"></a-entity>
 
           <a-sphere src="#mercury" radius="0.5" translate="0 1 0" position="20 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
@@ -145,7 +166,7 @@ class Space extends React.Component {
           <a-sphere src="#pluto" radius="0.5" translate="0 1 0" position="185 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
-          <a-entity bmfont-text="text: Pluto; color: red" position="185 4 0" scale="5 5 5"></a-entity>
+          <a-entity bmfont-text="text: Pluto; color: red" position="184 2.5 0" scale="5 5 5"></a-entity>
           
           <a-entity id="exit" collada-model="#stargate" position="-50 20 40" rotation="0 90 0"></a-entity>
 
@@ -166,7 +187,7 @@ class Space extends React.Component {
             </a-animation>
           </a-entity>
 
-          <a-entity id="spacexdragon" collada-model="#spacexdragon" position="32.5 0.5 -1.75" scale="0.03 0.03 0.03">
+          <a-entity id="spacexdragon-turn" collada-model="#spacexdragon" position="32.6 0.77 -2" scale="0.03 0.03 0.03">
             <a-animation attribute="position" dur="10000" from="32.6 0.77 -2" to="32.6 0.2 -1" direction="alternate" repeat="indefinite"></a-animation>
           </a-entity>
 
