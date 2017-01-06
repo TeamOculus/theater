@@ -5,33 +5,33 @@ class Eightbit extends React.Component {
     super();
     
     this.state = {
-      campos: [19, 2, -22],
+      campos: [19, 0, -22],
       currentdegree: 0
 
     }
     // x, z
     this.coordinates = {
-      "0": [0,0.08],
-      "45": [0.08,0.08],
-      "90": [0.08,0],
-      "135": [0.08,-0.08],
-      "180":[0,-0.08],
-      "225":[-0.08,-0.08],
-      "270":[-0.08,0],
-      "315":[-0.08,0.08],
+      "0": [0,0.005],
+      "45": [0.005,0.005],
+      "90": [0.005,0],
+      "135": [0.005,-0.005],
+      "180":[0,-0.005],
+      "225":[-0.005,-0.005],
+      "270":[-0.005,0],
+      "315":[-0.005,0.005],
     }
   }
   componentWillMount(){
     let statePointer = this.state;
     this.setState({
-      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]+0.08]
+      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]+0.005]
     })
-    for (let i=0; i < 10000; i++) {
+    for (let i=0; i < 1000000; i++) {
       setTimeout(() => {
         let ballPointer = this.state.ballpos;
         let camerapos = this.state.campos.slice();
         this.setState(this.getNewPositions())
-      }, i * 100)
+      }, i * 10)
     }
   }
   getNewPositions(){
@@ -104,7 +104,7 @@ class Eightbit extends React.Component {
             <audio src="http://localhost:8080/src/assets/sounds/mariokart.mp3" autoPlay preload></audio> 
           </a-assets>
 
-           {/*<a-entity collada-model="#peach" position="0 0 0"></a-entity>*/}
+           <a-entity collada-model="#peach" position="0 0 0"></a-entity>
            <a-sky color="lightblue"></a-sky>
 
            <a-entity position={this.state.campos.join(" ")} rotation="0 270 0">
