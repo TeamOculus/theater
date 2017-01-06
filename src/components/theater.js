@@ -4,8 +4,17 @@ import {Link} from 'react-router';
 class Theater extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      currentplaying: "#porter"
+    };
     this.goHome = this.goHome.bind(this);
+    this.playPorter = this.playPorter.bind(this);
+    this.playOkgo = this.playOkgo.bind(this);
+    this.playKendrick = this.playKendrick.bind(this);
+    this.playLianne = this.playLianne.bind(this);
+    this.rewind = this.rewind.bind(this);
+    this.pause = this.pause.bind(this);
+    this.play = this.play.bind(this);
   }
 
   render(){
@@ -23,13 +32,24 @@ class Theater extends React.Component {
             ></a-mixin>
           
             <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
-            <video id="nowplaying" autoplay loop="true" src="http://localhost:8080/src/assets/videos/sadmachine.mp4" />
-            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
+            <video id="porter" src="http://localhost:8080/src/assets/videos/porter.mp4" />
+            <video id="okgo" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
+            <video id="kendrick" src="http://localhost:8080/src/assets/videos/kendrick.mp4" />
+            <video id="lianne" src="http://localhost:8080/src/assets/videos/lianne.mp4" />
 
+            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
+            <img id="sadmachine" src="http://localhost:8080/src/assets/imgs/sadmachine.jpg" />
+            <img id="iwont" src="http://localhost:8080/src/assets/imgs/iwont.jpg" />
+            <img id="i" src="http://localhost:8080/src/assets/imgs/i.jpg" />
+            <img id="whatyou" src="http://localhost:8080/src/assets/imgs/whatyou.jpg" />
+
+            <img id="rewind" src="http://localhost:8080/src/assets/imgs/rewind.png" />
+            <img id="pause" src="http://localhost:8080/src/assets/imgs/pause.png" />
+            <img id="play" src="http://localhost:8080/src/assets/imgs/play.png" />
           </a-assets>
 
           <a-entity
-            audioanalyser="src: #nowplaying; smoothingTimeConstant: 0.9"
+            audioanalyser={"src: " + this.state.currentplaying + "; smoothingTimeConstant: 0.9"}
             audioanalyser-levels-scale="max: 50; multiplier: 0.03"
             entity-generator="mixin: bar; num: 11"
             layout=""
@@ -37,7 +57,7 @@ class Theater extends React.Component {
             position="1 9.5 8"
           ></a-entity>
           <a-entity
-            audioanalyser="src: #nowplaying; smoothingTimeConstant: 0.9"
+            audioanalyser={"src: " + this.state.currentplaying + "; smoothingTimeConstant: 0.9"}
             audioanalyser-levels-scale="max: 50; multiplier: 0.03"
             entity-generator="mixin: bar; num: 11"
             layout=""
@@ -46,11 +66,18 @@ class Theater extends React.Component {
           ></a-entity>
 
           <a-collada-model src="#theater-model" position="0 0 0"></a-collada-model>
-          <a-video src="#nowplaying" width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
+          <a-video id="currentvid" src={this.state.currentplaying} width="20.5" height="12" position="10.05 7.5 -5" ></a-video>
 
           <a-plane id="exitdoor" color="white" height="4.06" width="2.28" position="0.10 2.14 -2.88" rotation="0 90 0"></a-plane>
           <a-image src="#exit" height="0.98" width="1.78" position="0.10 4.76 -2.88" rotation="0 90 0"></a-image>
-
+          <a-image id="sadmachine2" src="#sadmachine" height="3" width="3" position="4 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="iwont2" src="#iwont" height="3" width="3" position="8 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="i2" src="#i" height="3" width="3" position="12 2 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="whatyou2" src="#whatyou" height="3" width="3" position="16 2 -2.88" rotation="0 0 0"></a-image>
+          
+          <a-image id="rewind2" src="#rewind" height="1" width="1" position="5 13 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="pause2" src="#pause" height="1" width="1" position="10 13 -2.88" rotation="0 0 0"></a-image>
+          <a-image id="play2" src="#play" height="1" width="1" position="15 13 -2.88" rotation="0 0 0"></a-image>
 
           <a-entity position="9.75 5 8.5">
             <a-camera>
@@ -63,13 +90,6 @@ class Theater extends React.Component {
            
         </a-scene>
 
-{/*
-        <audio id="audioElement" src="http://localhost:8080/src/assets/sounds/sadmachine.mp3"></audio>
-        <button onClick={this.play}>Play the Audio</button>
-        <button onClick={this.pause}>Pause the Audio</button>
-        <button onClick={this.increaseVol}>Increase Volume</button>
-        <button onClick={this.decreaseVol}>Decrease Volume</button>  
-*/} 
       </div>
     )
   }
@@ -80,9 +100,45 @@ class Theater extends React.Component {
 
   componentDidMount() {
     let goHomePointer = this.goHome;
+    let playPorterPointer = this.playPorter;
+    let playOkgoPointer = this.playOkgo;
+    let playKendrickPointer = this.playKendrick;
+    let playLiannePointer = this.playLianne;
+    let rewindPointer = this.rewind;
+    let pausePointer = this.pause;
+    let playPointer = this.play;
     document.querySelector('#exitdoor').addEventListener('click', function () {
       console.log('I was clicked!');
       goHomePointer();
+    });
+    document.querySelector('#sadmachine2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playPorterPointer();
+    });
+    document.querySelector('#iwont2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playOkgoPointer();
+    });
+    document.querySelector('#i2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playKendrickPointer();
+    });
+    document.querySelector('#whatyou2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playLiannePointer();
+    });
+
+    document.querySelector('#rewind2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      rewindPointer();
+    });
+    document.querySelector('#pause2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      pausePointer();
+    });
+    document.querySelector('#play2').addEventListener('click', function () {
+      console.log('I was clicked!');
+      playPointer();
     });
   }
 
@@ -90,19 +146,86 @@ class Theater extends React.Component {
     this.context.router.push("/")
   }
 
-  play() {
-    // make play audio trigger play video
-    document.getElementById('audioElement').play();
+  rewind() {
+    let artist = this.state.currentplaying;
+    console.log(artist);
+    let vid = document.getElementById(artist.slice(1))
+    vid.currentTime = 0;
   }
   pause() {
-    document.getElementById('audioElement').pause();
+    let artist = this.state.currentplaying;
+    console.log(artist);
+    let vid = document.getElementById(artist.slice(1))
+    vid.pause();
   }
-  increaseVol() {
-    document.getElementById('audioElement').volume+=0.1;
+  play() {
+    let artist = this.state.currentplaying;
+    console.log(artist);
+    let vid = document.getElementById(artist.slice(1))
+    vid.play();
   }
-  decreaseVol() {
-    document.getElementById('audioElement').volume-=0.1;
+
+  playPorter() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
+    this.setState({
+      currentplaying: "#porter"
+    })
+
+    vid1.play();
+    vid2.pause();
+    vid3.pause();
+    vid4.pause();
   }
+  playOkgo() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
+    this.setState({
+      currentplaying: "#okgo"
+    })
+
+    vid1.pause();
+    vid2.play();
+    vid3.pause();
+    vid4.pause();   
+  }
+  playKendrick() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
+    this.setState({
+      currentplaying: "#kendrick"
+    })
+
+    vid1.pause();
+    vid2.pause();
+    vid3.play();
+    vid4.pause();
+  }
+  playLianne() {
+    let vid1 = document.getElementById("porter"); 
+    let vid2 = document.getElementById("okgo");
+    let vid3 = document.getElementById("kendrick");
+    let vid4 = document.getElementById("lianne");
+
+    this.setState({
+      currentplaying: "#lianne"
+    })
+
+    vid1.pause();
+    vid2.pause();
+    vid3.pause();
+    vid4.play();
+  }
+
 }
 
 export default Theater;
