@@ -68,6 +68,9 @@ class Space extends React.Component {
             <img id="arrow" src="http://localhost:8080/src/assets/models/space/down-arrow-black.png"/>
             <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
             <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/space/stargate/model.dae"></a-asset-item>
+            <a-asset-item id="tardis" src="http://localhost:8080/src/assets/models/space/tardis/model.dae"></a-asset-item>
+            <a-asset-item id="deathstar" src="http://localhost:8080/src/assets/models/space/deathstar/model.dae"></a-asset-item>
+            <a-asset-item id="imperialfighter" src="http://localhost:8080/src/assets/models/space/imperialfighter/model.dae"></a-asset-item>
             <a-asset-item id="xwing" src="http://localhost:8080/src/assets/models/space/xwing/model.dae"></a-asset-item>
             <a-asset-item id="milleniumfalcon" src="http://localhost:8080/src/assets/models/space/milleniumfalcon/model.dae"></a-asset-item>
 
@@ -140,8 +143,21 @@ class Space extends React.Component {
           <a-sphere src="#pluto" radius="0.5" translate="0 1 0" position="185 0 0">
             <a-animation attribute="rotation" dur="20000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
           </a-sphere>
+          <a-entity bmfont-text="text: Pluto; color: red" position="185 4 0" scale="5 5 5"></a-entity>
           
           <a-entity id="exit" collada-model="#stargate" position="20 20 0"></a-entity>
+
+          <a-entity id="tardis" collada-model="#tardis" position="-20 0 -20">
+            <a-animation attribute="rotation" dur="2000" fill="forwards" from="0 0 0" to="0 360 0" repeat="indefinite"></a-animation>
+          </a-entity>
+
+          <a-entity id="deathstar" collada-model="#deathstar" position="50 20 60" scale="0.03 0.03 0.03">
+          </a-entity>
+
+          <a-entity id="imperialfighter" collada-model="#imperialfighter" position="50 0 60" rotation="45 0 0">
+            <a-animation attribute="position" dur="7000" from="50 0 60" to="50 -10 60" direction="alternate" repeat="indefinite">
+            </a-animation>
+          </a-entity>
           
           <a-entity id="xwing-anim" collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: false">
             <a-animation attribute="position" dur="20000" from="-150 -70 20" to="200 -70 20" direction="alternate" repeat="indefinite">
