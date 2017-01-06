@@ -6,26 +6,83 @@ class Eightbit extends React.Component {
     
     this.state = {
       campos: [19, 2, -22],
-      
+      currentdegree: 0
 
+    }
+    // x, z
+    this.coordinates = {
+      "0": [0,0.08],
+      "45": [0.08,0.08],
+      "90": [0.08,0],
+      "135": [0.08,-0.08],
+      "180":[0,-0.08],
+      "225":[-0.08,-0.08],
+      "270":[-0.08,0],
+      "315":[-0.08,0.08],
     }
   }
   componentWillMount(){
     let statePointer = this.state;
     this.setState({
-      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]-5]
+      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]+0.08]
     })
-    for (let i=0; i < 100; i++) {
+    for (let i=0; i < 10000; i++) {
       setTimeout(() => {
         let ballPointer = this.state.ballpos;
         let camerapos = this.state.campos.slice();
-        this.setState({campos: [ballPointer[0], ballPointer[1], ballPointer[2]], ballpos: [camerapos[0], camerapos[1], camerapos[2] - 5]})
-      }, i * 600)
+        this.setState(this.getNewPositions())
+      }, i * 100)
     }
+  }
+  getNewPositions(){
+    let ballPointer = this.state.ballpos;
+    let camerapos = this.state.campos.slice();
+    console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+    return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+      ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+  }
+  componentDidMount() {
+    window.addEventListener('keypress', (event) => {
+      if (event.keyCode == 122){
+        let currentdegreePointer = this.state.currentdegree;
+          this.setState({
+            currentdegree: currentdegreePointer += 45
+          })
+          if (this.state.currentdegree === 360){
+            this.setState({
+              currentdegree: 0
+            })
+          }
+        this.getNewPositions = function() {
+          let ballPointer = this.state.ballpos;
+          let camerapos = this.state.campos.slice();
+          console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+          return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+            ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+        }
+      } else if (event.keyCode == 120){
+          if (this.state.currentdegree === 0){
+            this.setState({
+              currentdegree: 360
+            })
+          }
+          let currentdegreePointer = this.state.currentdegree;
+          this.setState({
+            currentdegree: currentdegreePointer -= 45
+          })
+        this.getNewPositions = function() {
+          let ballPointer = this.state.ballpos;
+          let camerapos = this.state.campos.slice();
+          console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+          return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+            ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+        }
+      }
+    
+    })
   }
   
   render(){
-    console.log(this.state)
     return (
       <div className="show-vr-div">
 
@@ -47,10 +104,10 @@ class Eightbit extends React.Component {
             <audio src="http://localhost:8080/src/assets/sounds/mariokart.mp3" autoPlay preload></audio> 
           </a-assets>
 
-           <a-entity collada-model="#peach" position="0 0 0"></a-entity>
+           {/*<a-entity collada-model="#peach" position="0 0 0"></a-entity>*/}
            <a-sky color="lightblue"></a-sky>
 
-           <a-entity position={this.state.campos.join(" ")} rotation="0 90 0">
+           <a-entity position={this.state.campos.join(" ")} rotation="0 270 0">
               <a-camera>
               </a-camera>
            </a-entity>
