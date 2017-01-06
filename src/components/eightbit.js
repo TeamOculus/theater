@@ -1,7 +1,31 @@
 import React from 'react';
 
 class Eightbit extends React.Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      campos: [19, 2, -22],
+      
+
+    }
+  }
+  componentWillMount(){
+    let statePointer = this.state;
+    this.setState({
+      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]-5]
+    })
+    for (let i=0; i < 100; i++) {
+      setTimeout(() => {
+        let ballPointer = this.state.ballpos;
+        let camerapos = this.state.campos.slice();
+        this.setState({campos: [ballPointer[0], ballPointer[1], ballPointer[2]], ballpos: [camerapos[0], camerapos[1], camerapos[2] - 5]})
+      }, i * 600)
+    }
+  }
+  
   render(){
+    console.log(this.state)
     return (
       <div className="show-vr-div">
 
@@ -26,9 +50,13 @@ class Eightbit extends React.Component {
            <a-entity collada-model="#peach" position="0 0 0"></a-entity>
            <a-sky color="lightblue"></a-sky>
 
-           <a-entity position="21.5 0 -25" rotation="0 90 0">
-              <a-camera></a-camera>
+           <a-entity position={this.state.campos.join(" ")} rotation="0 90 0">
+              <a-camera>
+              </a-camera>
            </a-entity>
+
+           <a-sphere color="yellow" radius=".5" position={this.state.ballpos.join(" ")}></a-sphere>
+
 
            <a-entity collada-model="#star" position="26 .95 -20" scale=".5 .5 .5"></a-entity>
            <a-entity collada-model="#princess" position="17.25 1 -21" scale=".18 .18 .18" rotation="0 90 0"></a-entity>
