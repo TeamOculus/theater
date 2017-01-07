@@ -22,7 +22,7 @@ class Home extends React.Component {
             <img id="eightbitlink" src="http://localhost:8080/src/assets/models/eightbit/eightbitlink.jpg" />
             <img id="citylink" src="http://localhost:8080/src/assets/models/city/citylink.jpg" />
             <img id="underwaterlink" src="http://localhost:8080/src/assets/models/underwater/underwaterlink.jpg" />
-            <video id="vidbg" autoplay loop="true" webkit-playsinline src="http://localhost:8080/src/assets/videos/discoveryitaly.mp4" />
+            <video id="vidbg" autoplay loop="true" webkit-playsinline src="http://localhost:8080/src/assets/videos/elephants.mp4" />
           </a-assets>
 
           <a-curvedimage id="theaterlink2" src="#theaterlink" height="4.0" radius="12" theta-length="45"
