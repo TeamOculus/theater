@@ -5,27 +5,84 @@ class Eightbit extends React.Component {
     super();
     
     this.state = {
-      campos: [19, 2, -22],
-      
+      campos: [19, 0, -22],
+      currentdegree: 0
 
+    }
+    // x, z
+    this.coordinates = {
+      "0": [0,0.005],
+      "45": [0.005,0.005],
+      "90": [0.005,0],
+      "135": [0.005,-0.005],
+      "180":[0,-0.005],
+      "225":[-0.005,-0.005],
+      "270":[-0.005,0],
+      "315":[-0.005,0.005],
     }
   }
   componentWillMount(){
     let statePointer = this.state;
     this.setState({
-      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]-5]
+      ballpos: [statePointer.campos[0], statePointer.campos[1], statePointer.campos[2]+0.005]
     })
-    for (let i=0; i < 100; i++) {
+    for (let i=0; i < 1000000; i++) {
       setTimeout(() => {
         let ballPointer = this.state.ballpos;
         let camerapos = this.state.campos.slice();
-        this.setState({campos: [ballPointer[0], ballPointer[1], ballPointer[2]], ballpos: [camerapos[0], camerapos[1], camerapos[2] - 5]})
-      }, i * 600)
+        this.setState(this.getNewPositions())
+      }, i * 10)
     }
+  }
+  getNewPositions(){
+    let ballPointer = this.state.ballpos;
+    let camerapos = this.state.campos.slice();
+    console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+    return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+      ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+  }
+  componentDidMount() {
+    window.addEventListener('keypress', (event) => {
+      if (event.keyCode == 122){
+        let currentdegreePointer = this.state.currentdegree;
+          this.setState({
+            currentdegree: currentdegreePointer += 45
+          })
+          if (this.state.currentdegree === 360){
+            this.setState({
+              currentdegree: 0
+            })
+          }
+        this.getNewPositions = function() {
+          let ballPointer = this.state.ballpos;
+          let camerapos = this.state.campos.slice();
+          console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+          return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+            ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+        }
+      } else if (event.keyCode == 120){
+          if (this.state.currentdegree === 0){
+            this.setState({
+              currentdegree: 360
+            })
+          }
+          let currentdegreePointer = this.state.currentdegree;
+          this.setState({
+            currentdegree: currentdegreePointer -= 45
+          })
+        this.getNewPositions = function() {
+          let ballPointer = this.state.ballpos;
+          let camerapos = this.state.campos.slice();
+          console.log(this.coordinates[this.state.currentdegree.toString()][0], this.coordinates[this.state.currentdegree.toString()][1])
+          return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
+            ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
+        }
+      }
+    
+    })
   }
   
   render(){
-    console.log(this.state)
     return (
       <div className="show-vr-div">
 
@@ -41,6 +98,7 @@ class Eightbit extends React.Component {
             <a-asset-item id="princess" src="http://localhost:8080/src/assets/models/eightbit/princesspeach/model.dae"></a-asset-item>
             <a-asset-item id="yoshi" src="http://localhost:8080/src/assets/models/eightbit/yoshi/model.dae"></a-asset-item>
             <a-asset-item id="luigi" src="http://localhost:8080/src/assets/models/eightbit/luigi/model.dae"></a-asset-item>
+            <a-asset-item id="boswer" src="http://localhost:8080/src/assets/models/eightbit/boswer/model.dae"></a-asset-item>
           </a-assets> 
 
           <a-assets>
@@ -50,7 +108,7 @@ class Eightbit extends React.Component {
            <a-entity collada-model="#peach" position="0 0 0"></a-entity>
            <a-sky color="lightblue"></a-sky>
 
-           <a-entity position={this.state.campos.join(" ")} rotation="0 90 0">
+           <a-entity position={this.state.campos.join(" ")} rotation="0 210 0">
               <a-camera>
               </a-camera>
            </a-entity>
@@ -63,6 +121,7 @@ class Eightbit extends React.Component {
            <a-entity collada-model="#yoshi" position="17.25 .4 -22" scale=".9 .9 .9"rotation="0 90 0"></a-entity>
            <a-entity collada-model="#luigi" position="17.5 1 -23" scale=".20 .20 .20" rotation="0 90 0"></a-entity>
            <a-entity collada-model="#fire" position="29.5 1.3 -25" scale=".04 .04 .04" rotation="0 270 0"></a-entity>
+           <a-entity collada-model="#boswer" position="17.75 1 -24.74" scale=".4 .4 .4" rotation="0 90 0"></a-entity>
 
            <a-entity collada-model="#blue" position="18.20 1 -29.5" scale=" .03 .03 .03">
               <a-animation attribute="position" dur="10000" from="18.20 1 -29.5" to="19 1.1 -22" direction="alternate" repeat="indefinite"></a-animation>
