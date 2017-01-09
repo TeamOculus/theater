@@ -60,8 +60,8 @@ class City extends React.Component {
           {waldo}
 
           <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
-          <a-sound src="#city-ambience" autoplay="true" loop="true" volume="5"></a-sound>
-          <a-sound src="#fountain" autoplay="true" position="-1.75 0 13.11" loop="true" volume="1"></a-sound>
+          <a-sound src="#city-ambience" autoplay="true" loop="true" volume="4"></a-sound>
+          <a-sound src="#fountain" autoplay="true" position="-1.75 0 13.11" loop="true" volume="2"></a-sound>
 
           <a-camera position="0 0 0" wasd-controls="fly: false">
             <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
