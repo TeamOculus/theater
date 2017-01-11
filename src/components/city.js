@@ -15,9 +15,9 @@ class City extends React.Component {
     var waldo = [];
     let x, y, z;
     while(j < 1) {
-      x = Math.random() * 60 -30;
+      x = Math.random() * 56 -28;
       y = 0;
-      z = Math.random() * 60 -30;
+      z = Math.random() * 56 -28;
       waldo.push(<a-entity key={j} collada-model="#waldo" position={`${x} ${y} ${z}`}></a-entity> );
       j++;
     }
@@ -37,10 +37,15 @@ class City extends React.Component {
             <a-asset-item id="crowd2" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
             <a-asset-item id="crowd3" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
             <a-asset-item id="crowd4" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
-            <a-asset-item id="waldo" src="http://localhost:8080/src/assets/models/city/waldo.dae" />
+            <a-asset-item id="waldo" src="http://localhost:8080/src/assets/models/city/waldo.dae" sound="src: #good-result; autoplay: false; on: click"/>
             <a-asset-item id="park2" src="http://localhost:8080/src/assets/models/city/park2/park2.dae" />
 
             <img id="ground" src="http://localhost:8080/src/assets/imgs/city/grass.jpg" />
+
+            <audio id="city-ambience" src="http://localhost:8080/src/assets/sounds/city-sounds/city-park-ambience.mp3"></audio>
+            <audio id="fountain" src="http://localhost:8080/src/assets/sounds/city-sounds/fountain.mp3"></audio>
+            <audio id="good-result" src="http://localhost:8080/src/assets/sounds/city-sounds/good-result.mp3"></audio>
+
           </a-assets>
 
           <a-sky src="#sky" rotation="0 0 0"></a-sky>
@@ -51,12 +56,12 @@ class City extends React.Component {
           <a-entity collada-model="#crowd2" position="13.82 -1 9.66"></a-entity>
           <a-entity collada-model="#crowd3" position="-7.49 -1 9.63"></a-entity>
           <a-entity collada-model="#crowd4" position="14.77 -1 -1.45"></a-entity>
-          {/*<a-entity id="waldo-model" collada-model="#waldo" position="-5 0 -3"></a-entity>
-          
-          <<a-entity collada-model="#future-city" position="-228 0 195"></a-entity>*/}
+          {/*<a-entity id="waldo-model" collada-model="#waldo" position="-5 0 -3"></a-entity>*/}
           {waldo}
 
           <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
+          <a-sound src="#city-ambience" autoplay="true" loop="true" volume="4"></a-sound>
+          <a-sound src="#fountain" autoplay="true" position="-1.75 0 13.11" loop="true" volume="2"></a-sound>
 
           <a-camera position="0 0 0" wasd-controls="fly: false">
             <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
@@ -64,8 +69,6 @@ class City extends React.Component {
             </a-cursor>
           </a-camera>
         </a-scene>
-
-        
 
       </div>
     )
@@ -87,7 +90,6 @@ class City extends React.Component {
   goToHome() {
     this.context.router.push("/")
   }
-
   
 }
 
