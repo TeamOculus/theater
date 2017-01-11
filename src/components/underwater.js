@@ -98,11 +98,17 @@ class Underwater extends React.Component {
             </a-entity>
 
 
+
             {seaweed}
             {coral}
             {this.state.bubble}
             
-            <a-entity position="0 0 0" rotation="0 180 0">
+
+
+         
+
+            <a-entity position="1.54 13.71 -123.7" rotation="0 180 0">
+
               <a-camera wasd-controls="fly: true; acceleration: 150">
                 <a-cursor color="black" fuse="true" fuse-timeout="1000">
                   <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="1000"></a-animation>

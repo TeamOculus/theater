@@ -80,7 +80,7 @@ class Theater extends React.Component {
           <a-image id="play2" src="#play" height="1" width="1" position="15 13 -2.88" rotation="0 0 0"></a-image>
 
           <a-entity position="9.75 5 8.5">
-            <a-camera>
+            <a-camera rotation="0 360 0">
               <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
                 <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
               </a-cursor>
