@@ -7,7 +7,7 @@ class Underwater extends React.Component {
     this.state = {
       bubble: [],
       fish: []
-   }
+    }
     this.goHome = this.goHome.bind(this);
     this.reversedir1 = this.reversedir1.bind(this)
     this.reversedir2 = this.reversedir2.bind(this)
@@ -15,10 +15,10 @@ class Underwater extends React.Component {
   componentWillMount() {
      var i = 0;
      var l = 0;
-     while(i < 300) {
-      let x = Math.random() * 80 - 40;
+     while(i < 100) {
+      let x = Math.random() * 100 - 50;
       let y = Math.random() * 10;
-      let z = Math.random() * 80 - 40;
+      let z = Math.random() * 100 - 50;
       let bubble = this.state.bubble;
       bubble.push(<a-entity key={i} collada-model="#bubble" position={`${x} ${y} ${z}`} scale = "0.02 0.02 0.02"><a-animation attribute="position" to={`${x + Math.random() * 2 - 1} ${y + 5} ${z}`} dur={`${Math.random() * 12000}`} begin="3000" repeat="indefinite"></a-animation>
           </a-entity>);
@@ -41,17 +41,17 @@ class Underwater extends React.Component {
       var seaweed = [];
       var coral = [];
       let x, y, z;
-      while(j < 90) {
-        x = Math.random() * 50 -20;
+      while(j < 50) {
+        x = Math.random() * 70 -30;
         y = 0;
-        z = Math.random() * 50 -20;
+        z = Math.random() * 70 -30;
         seaweed.push(<a-entity key={j} collada-model="#seaweed" position={`${x} ${y} ${z}`}></a-entity> );
         j++;
       }
       while(k < 50) {
-        x = Math.random() * 40 -20;
+        x = Math.random() * 60 -20;
         y = 0;
-        z = Math.random() * 40 -20;
+        z = Math.random() * 60 -20;
         coral.push(<a-entity key={k} collada-model="#coral" position={`${x} ${y} ${z}`}></a-entity>);
         k++;
       }
@@ -60,7 +60,7 @@ class Underwater extends React.Component {
         <a-scene>
             <a-assets>
               <audio id = "jaws" src = "http://localhost:8080/src/assets/sounds/jaws.mp3"></audio>
-              <audio src = "http://localhost:8080/src/assets/sounds/ocean.mp3" autoPlay></audio>
+              <audio src = "http://localhost:8080/src/assets/sounds/ocean.mp3" autoPlay preload></audio>
               <img id="exit-blue" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
               <a-asset-item id='background' src='http://localhost:8080/src/assets/models/underwater/model1.dae'></a-asset-item>
               <a-asset-item id='bubble' src='http://localhost:8080/src/assets/models/underwater/model5.dae'></a-asset-item>
@@ -85,7 +85,6 @@ class Underwater extends React.Component {
             </a-entity>
             <a-entity id="shark-anim"collada-model='#shark' scale="1 1 1"position="10 2 15" sound="src: #jaws; autoplay: false; on: click">
               <a-animation attribute="position" from="10 2 15" to="50 2 15"repeat="indefinite" direction="alternate" dur="25000"></a-animation>
-              <a-sound></a-sound>
             </a-entity>
             <a-entity id="wartortle2"collada-model='#wartortle' scale="7 7 7"position="-20 0 20" rotation="90 180 0"></a-entity>
             <a-entity collada-model='#coral' scale="1 1 1"position="5 0 30"></a-entity>
@@ -97,12 +96,19 @@ class Underwater extends React.Component {
             <a-entity collada-model='#portal' scale="2 2 2"position="-27 20 18">
               <a-animation attribute="position" from="-27 20 18" to="-27 17 18" fill="forwards" dur="1000" repeat="indefinite" direction="alternate"></a-animation>
             </a-entity>
-         
-            {/*{seaweed}
+
+
+
+            {seaweed}
             {coral}
             {this.state.bubble}
-            {this.state.fish}*/}
+            
+
+
+         
+
             <a-entity position="1.54 13.71 -123.7" rotation="0 180 0">
+
               <a-camera wasd-controls="fly: true; acceleration: 150">
                 <a-cursor color="black" fuse="true" fuse-timeout="1000">
                   <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="1000"></a-animation>
