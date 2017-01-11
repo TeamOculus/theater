@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
 class Eightbit extends React.Component {
   constructor() {
     super();
-    
     this.state = {
       campos: [19, 0, -22],
       currentdegree: 0
 
     }
+    // this.goHome = this.goHome.bind(this)
     // x, z
     this.coordinates = {
       "0": [0,0.005],
@@ -20,6 +21,9 @@ class Eightbit extends React.Component {
       "270":[-0.005,0],
       "315":[-0.005,0.005],
     }
+  }
+  static contextTypes = {
+    router: PropTypes.object
   }
   componentWillMount(){
     let statePointer = this.state;
@@ -34,6 +38,8 @@ class Eightbit extends React.Component {
       }, i * 10)
     }
   }
+
+
   getNewPositions(){
     let ballPointer = this.state.ballpos;
     let camerapos = this.state.campos.slice();
@@ -41,6 +47,11 @@ class Eightbit extends React.Component {
     return {campos: [ballPointer[0], ballPointer[1], ballPointer[2]], 
       ballpos: [camerapos[0]+this.coordinates[this.state.currentdegree.toString()][0], camerapos[1], camerapos[2]+this.coordinates[this.state.currentdegree.toString()][1]]}
   }
+
+  // goHome() {
+  //   this.context.router.push("/")
+  // }
+
   componentDidMount() {
     window.addEventListener('keypress', (event) => {
       if (event.keyCode == 122){
@@ -80,6 +91,11 @@ class Eightbit extends React.Component {
       }
     
     })
+    // let goHomePointer = this.goHome;
+    // document.querySelector('#stardoor').addEventListener('click', function () {
+    //   console.log('I was clicked!');
+    //   goHomePointer();
+    // });
   }
   
   render(){
@@ -99,6 +115,7 @@ class Eightbit extends React.Component {
             <a-asset-item id="yoshi" src="http://localhost:8080/src/assets/models/eightbit/yoshi/model.dae"></a-asset-item>
             <a-asset-item id="luigi" src="http://localhost:8080/src/assets/models/eightbit/luigi/model.dae"></a-asset-item>
             <a-asset-item id="boswer" src="http://localhost:8080/src/assets/models/eightbit/boswer/model.dae"></a-asset-item>
+            <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/eightbit/stargate/model.dae"></a-asset-item>
           </a-assets> 
 
           <a-assets>
@@ -110,11 +127,15 @@ class Eightbit extends React.Component {
 
            <a-entity position={this.state.campos.join(" ")} rotation="0 210 0">
               <a-camera>
+                <a-cursor color="yellow" fuse="true" fuse-timeout="3000">
+                  <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="3000"></a-animation>
+                </a-cursor>
               </a-camera>
            </a-entity>
 
            <a-sphere color="yellow" radius=".5" position={this.state.ballpos.join(" ")}></a-sphere>
 
+           <a-entity bmfont-text="text: Press Z to steer left, X to steer right; color: black" position="38 10 -7" scale="8 8 8" rotation="0 180 0"></a-entity>
 
            <a-entity collada-model="#star" position="26 .95 -20" scale=".5 .5 .5"></a-entity>
            <a-entity collada-model="#princess" position="17.25 1 -21" scale=".18 .18 .18" rotation="0 90 0"></a-entity>
@@ -131,6 +152,8 @@ class Eightbit extends React.Component {
            <a-entity collada-model="#kart" position="19 1.1 -22" scale=".15 .15 .15" rotation="0 180 0">
               <a-animation attribute="position" dur="10000" from="18.20 1 -29.5" to="19 1.1 -20" direction="alternate" repeat="indefinite"></a-animation>
            </a-entity>
+
+           <a-entity id="stardoor" collada-model="#stargate" position="0 10 0" rotation="0 90 0"></a-entity>
 
         </a-scene>
 

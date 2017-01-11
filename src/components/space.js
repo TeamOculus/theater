@@ -182,7 +182,7 @@ class Space extends React.Component {
             </a-animation>
           </a-entity>
           
-          <a-entity id="xwing-anim" collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: false" scale="0.8 0.8 0.8">
+          <a-entity id="xwing-anim" collada-model="#xwing" position="0 -70 20" rotation="0 270 0" sound="src: #sound; autoplay: true; volume: 10" scale="0.8 0.8 0.8">
             <a-animation attribute="position" dur="20000" from="-150 -50 20" to="200 -50 20" direction="alternate" repeat="indefinite">
             </a-animation>
           </a-entity>
