@@ -7,7 +7,7 @@ class Underwater extends React.Component {
     this.state = {
       bubble: [],
       fish: []
-   }
+    }
     this.goHome = this.goHome.bind(this);
     this.reversedir1 = this.reversedir1.bind(this)
     this.reversedir2 = this.reversedir2.bind(this)
@@ -85,7 +85,6 @@ class Underwater extends React.Component {
             </a-entity>
             <a-entity id="shark-anim"collada-model='#shark' scale="1 1 1"position="10 2 15" sound="src: #jaws; autoplay: false; on: click">
               <a-animation attribute="position" from="10 2 15" to="50 2 15"repeat="indefinite" direction="alternate" dur="25000"></a-animation>
-              <a-sound></a-sound>
             </a-entity>
             <a-entity id="wartortle2"collada-model='#wartortle' scale="7 7 7"position="-20 0 20" rotation="90 180 0"></a-entity>
             <a-entity collada-model='#coral' scale="1 1 1"position="5 0 30"></a-entity>
@@ -97,12 +96,11 @@ class Underwater extends React.Component {
             <a-entity collada-model='#portal' scale="2 2 2"position="-27 20 18">
               <a-animation attribute="position" from="-27 20 18" to="-27 17 18" fill="forwards" dur="1000" repeat="indefinite" direction="alternate"></a-animation>
             </a-entity>
-         
             {seaweed}
             {coral}
             {this.state.bubble}
             {this.state.fish}
-            <a-entity position="0 0 0">
+            <a-entity position="0 0 0" rotation="0 180 0">
               <a-camera wasd-controls="fly: true; acceleration: 150">
                 <a-cursor color="black" fuse="true" fuse-timeout="1000">
                   <a-animation begin="fusing" easing="ease" attribute="scale" fill="none" from="1 1 1" to="0 0 0" dur="1000"></a-animation>
