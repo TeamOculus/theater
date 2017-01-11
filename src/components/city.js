@@ -56,7 +56,7 @@ class City extends React.Component {
           <a-entity collada-model="#crowd2" position="13.82 -1 9.66"></a-entity>
           <a-entity collada-model="#crowd3" position="-7.49 -1 9.63"></a-entity>
           <a-entity collada-model="#crowd4" position="14.77 -1 -1.45"></a-entity>
-          {<a-entity id="waldo-model" collada-model="#waldo" position="-5 0 -3" sound="src: #good-result; autoplay: false; on: click"></a-entity>}
+          {<a-entity id="waldo-model" collada-model="#waldo" position="-10 0 -3" sound="src: #good-result; autoplay: false; on: click"></a-entity>}
           {/*waldo*/}
 
           <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
