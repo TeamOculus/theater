@@ -40,8 +40,6 @@ class City extends React.Component {
             <a-asset-item id="waldo" src="http://localhost:8080/src/assets/models/city/waldo.dae" />
             <a-asset-item id="park2" src="http://localhost:8080/src/assets/models/city/park2/park2.dae" />
 
-            <img id="ground" src="http://localhost:8080/src/assets/imgs/city/grass.jpg" />
-
             <audio id="city-ambience" src="http://localhost:8080/src/assets/sounds/city-sounds/city-park-ambience.mp3"></audio>
             <audio id="fountain" src="http://localhost:8080/src/assets/sounds/city-sounds/fountain.mp3"></audio>
             <audio id="good-result" src="http://localhost:8080/src/assets/sounds/city-sounds/good-result.mp3"></audio>
