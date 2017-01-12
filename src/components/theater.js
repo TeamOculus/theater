@@ -31,21 +31,21 @@ class Theater extends React.Component {
               scale-y-color="from: 10 160 50; to: 180 255 180; maxScale: 15"
             ></a-mixin>
           
-            <a-asset-item id="theater-model" src="http://localhost:8080/src/assets/models/theater/model.dae"></a-asset-item>
-            <video id="porter" src="http://localhost:8080/src/assets/videos/porter.mp4" />
-            <video id="okgo" src="http://localhost:8080/src/assets/videos/okgo.mp4" />
-            <video id="kendrick" src="http://localhost:8080/src/assets/videos/kendrick.mp4" />
-            <video id="lianne" src="http://localhost:8080/src/assets/videos/lianne.mp4" />
+            <a-asset-item id="theater-model" src="https://teamoculus.github.io/theater/src/assets/models/theater/model.dae"></a-asset-item>
+            <video id="porter" src="https://teamoculus.github.io/theater/src/assets/videos/porter.mp4" />
+            <video id="okgo" src="https://teamoculus.github.io/theater/src/assets/videos/okgo.mp4" />
+            <video id="kendrick" src="https://teamoculus.github.io/theater/src/assets/videos/kendrick.mp4" />
+            <video id="lianne" src="https://teamoculus.github.io/theater/src/assets/videos/lianne.mp4" />
 
-            <img id="exit" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
-            <img id="sadmachine" src="http://localhost:8080/src/assets/imgs/sadmachine.jpg" />
-            <img id="iwont" src="http://localhost:8080/src/assets/imgs/iwont.jpg" />
-            <img id="i" src="http://localhost:8080/src/assets/imgs/i.jpg" />
-            <img id="whatyou" src="http://localhost:8080/src/assets/imgs/whatyou.jpg" />
+            <img id="exit" src="https://teamoculus.github.io/theater/src/assets/imgs/theaterexit.png" />
+            <img id="sadmachine" src="https://teamoculus.github.io/theater/src/assets/imgs/sadmachine.jpg" />
+            <img id="iwont" src="https://teamoculus.github.io/theater/src/assets/imgs/iwont.jpg" />
+            <img id="i" src="https://teamoculus.github.io/theater/src/assets/imgs/i.jpg" />
+            <img id="whatyou" src="https://teamoculus.github.io/theater/src/assets/imgs/whatyou.jpg" />
 
-            <img id="rewind" src="http://localhost:8080/src/assets/imgs/rewind.png" />
-            <img id="pause" src="http://localhost:8080/src/assets/imgs/pause.png" />
-            <img id="play" src="http://localhost:8080/src/assets/imgs/play.png" />
+            <img id="rewind" src="https://teamoculus.github.io/theater/src/assets/imgs/rewind.png" />
+            <img id="pause" src="https://teamoculus.github.io/theater/src/assets/imgs/pause.png" />
+            <img id="play" src="https://teamoculus.github.io/theater/src/assets/imgs/play.png" />
           </a-assets>
 
           <a-entity

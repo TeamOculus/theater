@@ -72,34 +72,34 @@ class Space extends React.Component {
 
         <a-scene>
           <a-assets>
-            <img id="spaceTexture" src="http://localhost:8080/src/assets/models/space/space-background.jpg"/>
-            <img id="zeuseus" src="http://localhost:8080/src/assets/models/space/zeuseus/model/zeus.jpg"/>
-            <img id="sun" src="http://localhost:8080/src/assets/models/space/sun/model/material1.jpg"/>
-            <img id="mercury" src="http://localhost:8080/src/assets/models/space/mercury/material3.jpg"/>
-            <img id="venus" src="http://localhost:8080/src/assets/models/space/venus/model/venusmap.jpg"/>
-            <img id="earth" src="http://localhost:8080/src/assets/models/space/earth/model/material1.jpg"/>
-            <img id="moon" src="http://localhost:8080/src/assets/models/space/moon/material2.jpg"/>
-            <img id="mars" src="http://localhost:8080/src/assets/models/space/mars/material12.jpg"/>
-            <img id="jupiter" src="http://localhost:8080/src/assets/models/space/jupiter/jupiter2.jpg"/>
-            <img id="saturn" src="http://localhost:8080/src/assets/models/space/saturn/model/material6.jpg"/>
-            <img id="saturnrings" src="http://localhost:8080/src/assets/models/space/saturn/model/saturn-rings.png"/>
-            <img id="neptune" src="http://localhost:8080/src/assets/models/space/neptune/material1.jpg"/>
-            <img id="uranus" src="http://localhost:8080/src/assets/models/space/uranus/model/material1.jpg"/>
-            <img id="pluto" src="http://localhost:8080/src/assets/models/space/pluto/material2.jpg"/>
-            <img id="arrow" src="http://localhost:8080/src/assets/models/space/down-arrow-black.png"/>
-            <audio id="sound" src="http://localhost:8080/src/assets/models/space/music/starwars.mp3"></audio>
-            <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/space/stargate/model.dae"></a-asset-item>
-            <a-asset-item id="tardis" src="http://localhost:8080/src/assets/models/space/tardis/model.dae"></a-asset-item>
-            <a-asset-item id="deathstar" src="http://localhost:8080/src/assets/models/space/deathstar/model.dae"></a-asset-item>
-            <a-asset-item id="imperialfighter" src="http://localhost:8080/src/assets/models/space/imperialfighter/model.dae"></a-asset-item>
-            <a-asset-item id="xwing" src="http://localhost:8080/src/assets/models/space/xwing/model.dae"></a-asset-item>
-            <a-asset-item id="milleniumfalcon" src="http://localhost:8080/src/assets/models/space/milleniumfalcon/model.dae"></a-asset-item>
-            <a-asset-item id="spacexdragon" src="http://localhost:8080/src/assets/models/space/spacexdragon/model.dae"></a-asset-item>
-            <a-asset-item id="spacestation" src="http://localhost:8080/src/assets/models/space/spacestation/model.dae"></a-asset-item>
+            <img id="spaceTexture" src="https://teamoculus.github.io/theater/src/assets/models/space/space-background.jpg"/>
+            <img id="zeuseus" src="https://teamoculus.github.io/theater/src/assets/models/space/zeuseus/model/zeus.jpg"/>
+            <img id="sun" src="https://teamoculus.github.io/theater/src/assets/models/space/sun/model/material1.jpg"/>
+            <img id="mercury" src="https://teamoculus.github.io/theater/src/assets/models/space/mercury/material3.jpg"/>
+            <img id="venus" src="https://teamoculus.github.io/theater/src/assets/models/space/venus/model/venusmap.jpg"/>
+            <img id="earth" src="https://teamoculus.github.io/theater/src/assets/models/space/earth/model/material1.jpg"/>
+            <img id="moon" src="https://teamoculus.github.io/theater/src/assets/models/space/moon/material2.jpg"/>
+            <img id="mars" src="https://teamoculus.github.io/theater/src/assets/models/space/mars/material12.jpg"/>
+            <img id="jupiter" src="https://teamoculus.github.io/theater/src/assets/models/space/jupiter/jupiter2.jpg"/>
+            <img id="saturn" src="https://teamoculus.github.io/theater/src/assets/models/space/saturn/model/material6.jpg"/>
+            <img id="saturnrings" src="https://teamoculus.github.io/theater/src/assets/models/space/saturn/model/saturn-rings.png"/>
+            <img id="neptune" src="https://teamoculus.github.io/theater/src/assets/models/space/neptune/material1.jpg"/>
+            <img id="uranus" src="https://teamoculus.github.io/theater/src/assets/models/space/uranus/model/material1.jpg"/>
+            <img id="pluto" src="https://teamoculus.github.io/theater/src/assets/models/space/pluto/material2.jpg"/>
+            <img id="arrow" src="https://teamoculus.github.io/theater/src/assets/models/space/down-arrow-black.png"/>
+            <audio id="sound" src="https://teamoculus.github.io/theater/src/assets/models/space/music/starwars.mp3"></audio>
+            <a-asset-item id="stargate" src="https://teamoculus.github.io/theater/src/assets/models/space/stargate/model.dae"></a-asset-item>
+            <a-asset-item id="tardis" src="https://teamoculus.github.io/theater/src/assets/models/space/tardis/model.dae"></a-asset-item>
+            <a-asset-item id="deathstar" src="https://teamoculus.github.io/theater/src/assets/models/space/deathstar/model.dae"></a-asset-item>
+            <a-asset-item id="imperialfighter" src="https://teamoculus.github.io/theater/src/assets/models/space/imperialfighter/model.dae"></a-asset-item>
+            <a-asset-item id="xwing" src="https://teamoculus.github.io/theater/src/assets/models/space/xwing/model.dae"></a-asset-item>
+            <a-asset-item id="milleniumfalcon" src="https://teamoculus.github.io/theater/src/assets/models/space/milleniumfalcon/model.dae"></a-asset-item>
+            <a-asset-item id="spacexdragon" src="https://teamoculus.github.io/theater/src/assets/models/space/spacexdragon/model.dae"></a-asset-item>
+            <a-asset-item id="spacestation" src="https://teamoculus.github.io/theater/src/assets/models/space/spacestation/model.dae"></a-asset-item>
 
 
             {/*
-            <a-asset-item id="enterprise1" src="http://localhost:8080/src/assets/models/space/enterprise1/model.dae"></a-asset-item>
+            <a-asset-item id="enterprise1" src="https://teamoculus.github.io/theater/src/assets/models/space/enterprise1/model.dae"></a-asset-item>
             */}
           </a-assets>
 

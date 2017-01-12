@@ -105,21 +105,21 @@ class Eightbit extends React.Component {
         <a-scene>
           <a-assets>
             
-            <a-asset-item id="peach" src="http://localhost:8080/src/assets/models/eightbit/peach/model.dae"></a-asset-item>
-            <a-asset-item id="star" src="http://localhost:8080/src/assets/models/eightbit/star/model.dae"></a-asset-item>
-            <a-asset-item id="fire" src="http://localhost:8080/src/assets/models/eightbit/fire/model.dae"></a-asset-item>
-            <a-asset-item id="blue" src="http://localhost:8080/src/assets/models/eightbit/blueshell/shellmodel.dae"></a-asset-item>
-            <a-asset-item id="bomb" src="http://localhost:8080/src/assets/models/eightbit/bomb/model.dae"></a-asset-item>
-            <a-asset-item id="kart" src="http://localhost:8080/src/assets/models/eightbit/kart/model.dae"></a-asset-item>
-            <a-asset-item id="princess" src="http://localhost:8080/src/assets/models/eightbit/princesspeach/model.dae"></a-asset-item>
-            <a-asset-item id="yoshi" src="http://localhost:8080/src/assets/models/eightbit/yoshi/model.dae"></a-asset-item>
-            <a-asset-item id="luigi" src="http://localhost:8080/src/assets/models/eightbit/luigi/model.dae"></a-asset-item>
-            <a-asset-item id="boswer" src="http://localhost:8080/src/assets/models/eightbit/boswer/model.dae"></a-asset-item>
-            <a-asset-item id="stargate" src="http://localhost:8080/src/assets/models/eightbit/stargate/model.dae"></a-asset-item>
+            <a-asset-item id="peach" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/peach/model.dae"></a-asset-item>
+            <a-asset-item id="star" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/star/model.dae"></a-asset-item>
+            <a-asset-item id="fire" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/fire/model.dae"></a-asset-item>
+            <a-asset-item id="blue" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/blueshell/shellmodel.dae"></a-asset-item>
+            <a-asset-item id="bomb" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/bomb/model.dae"></a-asset-item>
+            <a-asset-item id="kart" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/kart/model.dae"></a-asset-item>
+            <a-asset-item id="princess" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/princesspeach/model.dae"></a-asset-item>
+            <a-asset-item id="yoshi" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/yoshi/model.dae"></a-asset-item>
+            <a-asset-item id="luigi" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/luigi/model.dae"></a-asset-item>
+            <a-asset-item id="boswer" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/boswer/model.dae"></a-asset-item>
+            <a-asset-item id="stargate" src="https://teamoculus.github.io/theater/src/assets/models/eightbit/stargate/model.dae"></a-asset-item>
           </a-assets> 
 
           <a-assets>
-            <audio src="http://localhost:8080/src/assets/sounds/mariokart.mp3" autoPlay preload></audio> 
+            <audio src="https://teamoculus.github.io/theater/src/assets/sounds/mariokart.mp3" autoPlay preload></audio> 
           </a-assets>
 
            <a-entity collada-model="#peach" position="0 0 0"></a-entity>
