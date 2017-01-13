@@ -31,18 +31,18 @@ class City extends React.Component {
 
         <a-scene>
           <a-assets>
-            <img id="sky" src="http://localhost:8080/src/assets/imgs/city/city-bg.jpg" />
+            <img id="sky" src="/src/assets/imgs/city/city-bg.jpg" />
 
-            <a-asset-item id="crowd1" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
-            <a-asset-item id="crowd2" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
-            <a-asset-item id="crowd3" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
-            <a-asset-item id="crowd4" src="http://localhost:8080/src/assets/models/city/crowd.dae" />
-            <a-asset-item id="waldo" src="http://localhost:8080/src/assets/models/city/waldo.dae" />
-            <a-asset-item id="park2" src="http://localhost:8080/src/assets/models/city/park2/park2.dae" />
+            <a-asset-item id="crowd1" src="/src/assets/models/city/crowd.dae" />
+            <a-asset-item id="crowd2" src="/src/assets/models/city/crowd.dae" />
+            <a-asset-item id="crowd3" src="/src/assets/models/city/crowd.dae" />
+            <a-asset-item id="crowd4" src="/src/assets/models/city/crowd.dae" />
+            <a-asset-item id="waldo" src="/src/assets/models/city/waldo.dae" />
+            <a-asset-item id="park2" src="/src/assets/models/city/park2/park2.dae" />
 
-            <audio id="city-ambience" src="http://localhost:8080/src/assets/sounds/city-sounds/city-park-ambience.mp3"></audio>
-            <audio id="fountain" src="http://localhost:8080/src/assets/sounds/city-sounds/fountain.mp3"></audio>
-            <audio id="good-result" src="http://localhost:8080/src/assets/sounds/city-sounds/good-result.mp3"></audio>
+            <audio id="city-ambience" src="/src/assets/sounds/city-sounds/city-park-ambience.mp3"></audio>
+            <audio id="fountain" src="/src/assets/sounds/city-sounds/fountain.mp3"></audio>
+            <audio id="good-result" src="/src/assets/sounds/city-sounds/good-result.mp3"></audio>
 
           </a-assets>
 

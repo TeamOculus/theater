@@ -59,22 +59,22 @@ class Underwater extends React.Component {
       <div className="show-vr-div">
         <a-scene>
             <a-assets>
-              <audio id = "jaws" src = "http://localhost:8080/src/assets/sounds/jaws.mp3"></audio>
-              <audio src = "http://localhost:8080/src/assets/sounds/ocean.mp3" autoPlay preload></audio>
-              <img id="exit-blue" src="http://localhost:8080/src/assets/imgs/theaterexit.png" />
-              <a-asset-item id='background' src='http://localhost:8080/src/assets/models/underwater/model1.dae'></a-asset-item>
-              <a-asset-item id='bubble' src='http://localhost:8080/src/assets/models/underwater/model5.dae'></a-asset-item>
-              <a-asset-item id='shark' src='http://localhost:8080/src/assets/models/underwater/shark1.dae'></a-asset-item>
-              <a-asset-item id='whale2' src='http://localhost:8080/src/assets/models/underwater/whale2.dae'></a-asset-item>
-              <a-asset-item id='building' src='http://localhost:8080/src/assets/models/underwater/building1.dae'></a-asset-item>
-              <a-asset-item id='seaweed' src='http://localhost:8080/src/assets/models/underwater/seaweed.dae'></a-asset-item>
-              <a-asset-item id='building2' src='http://localhost:8080/src/assets/models/underwater/building2.dae'></a-asset-item>
-              <a-asset-item id='building3' src='http://localhost:8080/src/assets/models/underwater/building3.dae'></a-asset-item>
-              <a-asset-item id='building4' src='http://localhost:8080/src/assets/models/underwater/building4.dae'></a-asset-item>
-              <a-asset-item id='building5' src='http://localhost:8080/src/assets/models/underwater/building5.dae'></a-asset-item>
-              <a-asset-item id='coral' src='http://localhost:8080/src/assets/models/underwater/coral.dae'></a-asset-item>
-              <a-asset-item id='portal' src='http://localhost:8080/src/assets/models/underwater/portal.dae'></a-asset-item>
-              <a-asset-item id='wartortle' src='http://localhost:8080/src/assets/models/underwater/wartortle.dae'></a-asset-item>
+              <audio id = "jaws" src = "/src/assets/sounds/jaws.mp3"></audio>
+              <audio src = "/src/assets/sounds/ocean.mp3" autoPlay preload></audio>
+              <img id="exit-blue" src="/src/assets/imgs/theaterexit.png" />
+              <a-asset-item id='background' src='/src/assets/models/underwater/model1.dae'></a-asset-item>
+              <a-asset-item id='bubble' src='/src/assets/models/underwater/model5.dae'></a-asset-item>
+              <a-asset-item id='shark' src='/src/assets/models/underwater/shark1.dae'></a-asset-item>
+              <a-asset-item id='whale2' src='/src/assets/models/underwater/whale2.dae'></a-asset-item>
+              <a-asset-item id='building' src='/src/assets/models/underwater/building1.dae'></a-asset-item>
+              <a-asset-item id='seaweed' src='/src/assets/models/underwater/seaweed.dae'></a-asset-item>
+              <a-asset-item id='building2' src='/src/assets/models/underwater/building2.dae'></a-asset-item>
+              <a-asset-item id='building3' src='/src/assets/models/underwater/building3.dae'></a-asset-item>
+              <a-asset-item id='building4' src='/src/assets/models/underwater/building4.dae'></a-asset-item>
+              <a-asset-item id='building5' src='/src/assets/models/underwater/building5.dae'></a-asset-item>
+              <a-asset-item id='coral' src='/src/assets/models/underwater/coral.dae'></a-asset-item>
+              <a-asset-item id='portal' src='/src/assets/models/underwater/portal.dae'></a-asset-item>
+              <a-asset-item id='wartortle' src='/src/assets/models/underwater/wartortle.dae'></a-asset-item>
             </a-assets>
      
             <a-entity collada-model="#background" position="0 0 0"></a-entity>
