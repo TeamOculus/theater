@@ -65,7 +65,6 @@ class Underwater extends React.Component {
               <a-asset-item id='background' src='http://localhost:8080/src/assets/models/underwater/model1.dae'></a-asset-item>
               <a-asset-item id='bubble' src='http://localhost:8080/src/assets/models/underwater/model5.dae'></a-asset-item>
               <a-asset-item id='shark' src='http://localhost:8080/src/assets/models/underwater/shark1.dae'></a-asset-item>
-              <a-asset-item id='whale' src='http://localhost:8080/src/assets/models/underwater/whale.dae'></a-asset-item>
               <a-asset-item id='whale2' src='http://localhost:8080/src/assets/models/underwater/whale2.dae'></a-asset-item>
               <a-asset-item id='building' src='http://localhost:8080/src/assets/models/underwater/building1.dae'></a-asset-item>
               <a-asset-item id='seaweed' src='http://localhost:8080/src/assets/models/underwater/seaweed.dae'></a-asset-item>
@@ -74,7 +73,6 @@ class Underwater extends React.Component {
               <a-asset-item id='building4' src='http://localhost:8080/src/assets/models/underwater/building4.dae'></a-asset-item>
               <a-asset-item id='building5' src='http://localhost:8080/src/assets/models/underwater/building5.dae'></a-asset-item>
               <a-asset-item id='coral' src='http://localhost:8080/src/assets/models/underwater/coral.dae'></a-asset-item>
-              <a-asset-item id='fish1' src='http://localhost:8080/src/assets/models/underwater/fish1.dae'></a-asset-item>
               <a-asset-item id='portal' src='http://localhost:8080/src/assets/models/underwater/portal.dae'></a-asset-item>
               <a-asset-item id='wartortle' src='http://localhost:8080/src/assets/models/underwater/wartortle.dae'></a-asset-item>
             </a-assets>
