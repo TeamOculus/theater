@@ -40,7 +40,7 @@ class City extends React.Component {
             <a-asset-item id="waldo" src="/src/assets/models/city/waldo.dae" />
             <a-asset-item id="park2" src="/src/assets/models/city/park2/park2.dae" />
 
-            <audio id="city-ambience" src="/src/assets/sounds/city-sounds/city-park-ambience.mp3"></audio>
+            <audio id="city-ambience" src="/src/assets/sounds/city-sounds/city-park-ambience.mp3" loop="true" volume="4" autoPlay="true" preload></audio>
             <audio id="fountain" src="/src/assets/sounds/city-sounds/fountain.mp3"></audio>
             <audio id="good-result" src="/src/assets/sounds/city-sounds/good-result.mp3"></audio>
 
@@ -58,7 +58,6 @@ class City extends React.Component {
           {/*waldo*/}
 
           <a-entity collada-model="#park2" position="29.15 0 26.77"></a-entity>
-          <a-sound src="#city-ambience" autoplay="true" position="0 0 0" loop="true" volume="4"></a-sound>
           <a-sound src="#fountain" autoplay="true" position="-1.75 0 13.11" loop="true" volume="2"></a-sound>
 
           <a-camera position="0 0 0" wasd-controls="fly: false">
