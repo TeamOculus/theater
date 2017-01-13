@@ -24,16 +24,16 @@ class Underwater extends React.Component {
           </a-entity>);
        i++;
      }
-     while(l < 7) {
-       let x = Math.random() * 15 -5;
-       let y = Math.random() * 5;
-       let z = Math.random() * 5 -5;
-       let fish = this.state.fish;
-        fish.push(<a-entity key={l} id = "fish" collada-model="#fish1" position={`${x} ${y} ${z}`} scale = "1 1 1">
-       <a-animation attribute="position" from={`${x + 30} ${y} ${z}`} to= {`${x + 15} ${y} ${z}`} repeat="indefinite" dur="8000"></a-animation>
-        </a-entity>);
-        l++;
-     }
+    //  while(l < 7) {
+    //    let x = Math.random() * 15 -5;
+    //    let y = Math.random() * 5;
+    //    let z = Math.random() * 5 -5;
+    //    let fish = this.state.fish;
+    //     fish.push(<a-entity key={l} id = "fish" collada-model="#fish1" position={`${x} ${y} ${z}`} scale = "1 1 1">
+    //    <a-animation attribute="position" from={`${x + 30} ${y} ${z}`} to= {`${x + 15} ${y} ${z}`} repeat="indefinite" dur="8000"></a-animation>
+    //     </a-entity>);
+    //     l++;
+    //  }
   }
  render(){
       var j = 0
